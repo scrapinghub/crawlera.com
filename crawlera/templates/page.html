@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Crawlera</title>
+
+<link rel="stylesheet" href="{{ STATIC_URL}}css/normalize.css" />
+<link rel="stylesheet" href="{{ STATIC_URL}}css/foundation.css" />
+
+<script src="{{ STATIC_URL}}js/vendor/custom.modernizr.js"></script>
+<script src="{{ STATIC_URL}}js/vendor/jquery.js"></script>
+<script src="{{ STATIC_URL}}js/foundation.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
+</head>
+<body>
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="#">Crawlera</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="{% url home %}"><span>Menu</span></a></li>
+  </ul>
+ <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li {% block nav-about %}{% endblock %}><a href="{% url about %}">About</a></li>
+      <li class="divider"></li>
+      <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing 5}">Pricing</a></li>
+      <li class="divider"></li>
+      <li {% block nav-api %}{% endblock %}><a href="{% url api %}">API</a></li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider hide-for-small"></li>
+      <li class="has-form">
+        <form>
+          <div class="row collapse">
+            <div class="small-8 columns">
+              <input type="text">
+            </div>
+            <div class="small-4 columns">
+              <a href="#" class="alert button">Search</a>
+            </div>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </section>
+</nav>
+<div class="container">
+ {% block page-content %}
+ {% endblock %}
+</div>
+</body> </html>
