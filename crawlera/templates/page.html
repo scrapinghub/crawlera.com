@@ -21,7 +21,7 @@
   <ul class="title-area">
     <!-- Title Area -->
     <li class="name">
-      <h1><a href="#">Crawlera</a></h1>
+      <h1><a href="{% url home %}">Crawlera</a></h1>
     </li>
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="{% url home %}"><span>Menu</span></a></li>
@@ -32,7 +32,11 @@
       <li class="divider"></li>
       <li {% block nav-about %}{% endblock %}><a href="{% url about %}">About</a></li>
       <li class="divider"></li>
-      <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing 5}">Pricing</a></li>
+      <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}">Pricing</a></li>
+      <li class="divider"></li>
+      <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}">FAQ</a></li>
+      <li class="divider"></li>
+      <li {% block nav-examples %}{% endblock %}><a href="{% url examples %}">Examples</a></li>
       <li class="divider"></li>
       <li {% block nav-api %}{% endblock %}><a href="{% url api %}">API</a></li>
       <li class="divider"></li>
@@ -44,11 +48,7 @@
       <li class="has-form">
         <form>
           <div class="row collapse">
-            <div class="small-8 columns">
-              <input type="text">
-            </div>
             <div class="small-4 columns">
-              <a href="#" class="alert button">Search</a>
             </div>
           </div>
         </form>
@@ -59,5 +59,11 @@
 <div class="container">
  {% block page-content %}
  {% endblock %}
+</div>
+<div id="signup" class="reveal-modal">
+  <h2>Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+  <a class="close-reveal-modal">&#215;</a>
 </div>
 </body> </html>

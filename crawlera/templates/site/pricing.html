@@ -1,0 +1,44 @@
+{% extends "page.html" %}
+
+{% block nav-pricing %} class="active"{% endblock %}
+
+{% block page-content %}
+<div class="row">
+  <h2>Pricing</h2>
+  <p>Unlike other proxy providers, Crawlera offers a simple pricing model, where you only pay for successful requests. This means that you will not be charged if there is no capacity for processing your request from a clean slave. You also have the option to reserve additional slave proxies to use exclusively for your requests (thus preventing other customer requests interfering with yours) or even supply your own proxies to the pool of slaves.
+  </div>
+<div class="row">
+  <div class="large-4 columns">
+    <ul class="pricing-table">
+      <li class="title">Simple</li>
+      <li class="price">$9.99</li>
+      <li class="description">An awesome description</li>
+      <li class="bullet-item">1000 requests</li>
+      <li class="bullet-item">5GB</li>
+      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+    </ul>
+  </div>
+
+  <div class="large-4 columns">
+    <ul class="pricing-table">
+      <li class="title">Standard</li>
+      <li class="price">$49.99</li>
+      <li class="description">An awesome description</li>
+      <li class="bullet-item">5000 requests</li>
+      <li class="bullet-item">15GB</li>
+      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+    </ul>
+  </div>
+
+  <div class="large-4 columns">
+    <ul class="pricing-table">
+      <li class="title">Advanced</li>
+      <li class="price">$99.99</li>
+      <li class="description">An awesome description</li>
+      <li class="bullet-item">15000 requests</li>
+      <li class="bullet-item">25GB</li>
+      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

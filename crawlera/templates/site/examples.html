@@ -1,0 +1,44 @@
+{% extends "page.html" %}
+
+{% block nav-examples %} class="active"{% endblock %}
+
+{% block page-content %}
+<div class="row">
+<h2>Examples</h2>
+
+<h3>cURL</h3>
+<p>ProxyHub provides a standard HTTP proxy interface so you can use it with any software that supports them.
+Here is an example using ProxyHub with curl to download <a href="http://crawlera.com">http://crawlera.com</a>:
+
+<div class="panel">
+  curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com
+</div>
+
+<h3>Command-line tools</h3>
+<p>Several Unix commands (like wget and curl) and applications (including Scrapy) support the http_proxy environment variable to configure the HTTP proxy to use.
+You can configure before running your command with:
+<div class="panel">
+  export http_proxy=http://USER:PASS@proxy.crawlera.com:8010
+</div>
+
+<h3>API</h3>
+<p>You can use REST API to fetch content.
+<p>Currently this is the only way to fetch sites via HTTPS
+<div class="panel">
+  curl http://USER:PASS@proxy.crawlera.com:8010/fetch?url=http://crawlera.com
+</div>
+
+<h3>Scrapy</h3>
+<p>To use ProxyHub with Scrapy you could just set the http_proxy
+    environment setting (as explained in the previous
+section). However, if you need more functionality (like
+configuring which spiders to send through the proxy) you can use
+the HubProxyMiddleware, provided in the scrapylib project.
+
+<p>Download the scrapylib project, and enable the middleware by
+adding this to your Scrapy settings:
+<div class="panel">
+  DOWNLOADER_MIDDLEWARES = {'scrapylib.hubproxy.HubProxyMiddleware': 600}
+</div>
+</div>
+{% endblock %}

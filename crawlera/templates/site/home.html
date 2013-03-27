@@ -1,1 +1,41 @@
 {% extends "page.html" %}
+
+{% block page-content %}
+<div class="row">
+  <div class="large-12 columns">
+    <h1>Crawlera</h1>
+    <h3>About</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-8 columns">
+    <p>Crawlera is a smart HTTP/HTTPS proxy designed specifically for
+  scraping purposes. Although it provides a standard HTTP proxy
+  interface it does a lot more internally, like throttling access to
+  domains by introducing delays and discarding IPs from the pool when
+  they get banned or have other problems. As a scraping user, you no
+  longer have to worry about tinkering with download delays,
+  concurrent requests, user agents, cookies or referrers to avoid
+  getting banned from sites, you just configure the proxy and fire up
+  your crawler of choice and start scraping.
+    <a href="{% url about %}">Read more</a>
+  </div>
+  <div class="large-4 columns">
+    <div class="panel round">
+      <h3 class="center subheader">Can't wait to try?</h3>
+      <a class="button expand" data-reveal-id="signup">Sign up</a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="large-8 columns">
+    <h3>Example</h3>
+    <p>Using Crawlera as easy as running following command:
+    <div class="panel">
+      curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com
+    </div>
+    <a href="{% url examples %}">More examples</a>
+  </div>
+</div>
+{% endblock %}

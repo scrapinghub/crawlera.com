@@ -2,7 +2,7 @@
 
 {% block body_class %}about{% endblock %}
 
-{% block subnav-about %} class="active"{% endblock %}
+{% block nav-about %} class="active"{% endblock %}
  
 {% block page-title %}About Us{% endblock %}
  
@@ -10,45 +10,28 @@
 <div class="row">
   <div class="large-10 columns">
     <h2>Overview</h2>
-<p>ProxyHub provides an HTTP proxy, with a pool of rotating IPs, designed specifically for scraping purposes. Although it provides a standard HTTP proxy interface it does a lot more internally, like throttling access to domains by introducing delays and discarding IPs from the pool when they get banned or have other problems. As a scraping user, you no longer have to worry about tinkering with download delays, concurrent requests, user agents, cookies or referrers to avoid getting banned from sites, you just configure the proxy and fire up your crawler of choice and start scraping.
-    <h2>Examples</h2>
-
-    <h3>cURL</h3>
-    <p>ProxyHub provides a standard HTTP proxy interface so you can use it with any software that supports them.
-Here is an example using ProxyHub with curl to download <a href="http://scrapinghub.com">http://scrapinghub.com</a>:
+    <p>Crawlera provides an HTTP proxy, with a pool of rotating IPs, designed specifically for scraping purposes. Although it provides a standard HTTP proxy interface it does a lot more internally, like throttling access to domains by introducing delays and discarding IPs from the pool when they get banned or have other problems. As a scraping user, you no longer have to worry about tinkering with download delays, concurrent requests, user agents, cookies or referrers to avoid getting banned from sites, you just configure the proxy and fire up your crawler of choice and start scraping.
     
-    <div class="panel">
-      curl -x proxy.scrapinghub.com:8010 -U USER:PASS http://scrapinghub.com
-    </div>
+    <h2>How does it work?</h2>
+    <p>Crawlera architecture is based on a group of “master” proxies that receive the user requests and distribute them among many internal “slave” proxies.
+    <p>The internal slave proxies are just plain simple HTTP proxies (like one you would run with Squid or similar software) with no extra logic.
+    The masters, however, implement a proprietary algorithm to minimize the risks of getting banned, by throttling requests sent to sites from each internal slave, among other techniques. If, for whatever reason, any slaves do get banned anyway, the masters will detect and avoid using them in the future for those particular sites.
+    <p>Banned requests typically return a non-200 response (usually
+    503 or 403) or will redirect to a captcha page. These responses
+    are detected by ProxyHub masters and the requests are
+    automatically retried from other (clean) slaves. Banned slaves are
+    blacklisted to prevent using them again for that domain. All this
+    logic happens inside ProxyHub infrastructure and the user never
+    receives the banned response, nor is charged for them (only
+    successful requests are charged). The user may get a 503 response
+    from ProxyHub if there are no more clean slaves left to try for a
+    particular domain. In this case, the user may choose to reserve
+    dedicated slaves to increase the capacity. Also, thanks to how
+    ProxyHub architecture works, users can supply their own proxies to
+    be used as slave. See Pricing for more details.
 
-    <h3>Command-line tools</h3>
-    <p>Several Unix commands (like wget and curl) and applications (including Scrapy) support the http_proxy environment variable to configure the HTTP proxy to use.
-You can configure before running your command with:
-    <div class="panel">
-      export http_proxy=http://USER:PASS@proxy.scrapinghub.com:8010
-    </div>
-
-    <h3>Scrapy</h3>
-    <p>To use ProxyHub with Scrapy you could just set the http_proxy
-    environment setting (as explained in the previous
-    section). However, if you need more functionality (like
-    configuring which spiders to send through the proxy) you can use
-    the HubProxyMiddleware, provided in the scrapylib project.
-    
-    <p>Download the scrapylib project, and enable the middleware by
-    adding this to your Scrapy settings:
-    <div class="panel">
-      DOWNLOADER_MIDDLEWARES = {'scrapylib.hubproxy.HubProxyMiddleware': 600}
-    </div>
-  </div>
-  </div class="large-4 columns">
-  
-  </div>
-</div>
-<h1>About Us</h1>
-
+<h2>About us</h2>
 <div class="person">
-  <img class="column" width="124" height="150" src="{{ MEDIA_URL }}images/people/pablo.jpg" alt="Pablo Hoffman photo" />
   <p><b>Pablo Hoffman</b> - Founder</p>
   <p>Pablo has been working on a wide range of
   web scraping projects since 2007. He's the lead developer of <a class="external"
@@ -58,10 +41,7 @@ You can configure before running your command with:
   bootstrap your startup.</p>
 </div>
  
-<hr class="space" />
-
 <div class="person">
-  <img class="column" width="124" height="150" src="{{ MEDIA_URL }}images/people/shane.jpg" />
   <p><b>Shane Evans</b> - Founder</p>
   <p>Shane has been involved in startups since joining
   lastminute.com in 1999, where he led development of the most critical projects
@@ -72,4 +52,14 @@ You can configure before running your command with:
   sourced as the <a class="external" href="http://scrapy.org">Scrapy</a> project.</p>
 </div>
 
+</div>
+</div class="large-4 columns">
+
+</div>
+</div>
+
 {% endblock %}
+
+
+
+
