@@ -6,7 +6,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # admin.autodiscover()
 
 def site(name, pattern=None, template=None, **kwargs):
-    if pattern is None: pattern = '^{0}\.html'.format(name)
+    if pattern is None: pattern = '^{0}'.format(name)
     if template is None: template = 'site/{0}.html'.format(name)
 
     if not pattern.startswith('^'): pattern = '^' + pattern
