@@ -1,0 +1,16 @@
+Source: crawlera-site
+Section: misc
+Priority: extra
+Maintainer: Scrapinghub Team <info@scrapinghub.com>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+Homepage: http://www.scrapinghub.com/
+
+Package: crawlera-site
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends},
+ python-django (>= 1.2),
+ apache2,
+ libapache2-mod-wsgi
+Description: crawlera.com website
+ This package contains the crawlera.com website

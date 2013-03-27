@@ -1,0 +1,5 @@
+debian/django.wsgi         /usr/share/crawlera-site
+crawlera/templates         /usr/share/crawlera-site
+crawlera/static            /usr/share/crawlera-site
+debian/crawlera-site.conf  /etc/apache2/sites-enabled
+debian/local_settings.py   /etc/crawlera-site
