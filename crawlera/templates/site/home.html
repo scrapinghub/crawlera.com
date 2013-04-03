@@ -2,14 +2,13 @@
 
 {% block page-content %}
 <div class="row">
-  <div class="large-12 columns">
-    <h1>Crawlera</h1>
+  <div class="span12">
     <h3>About</h3>
   </div>
 </div>
 
 <div class="row">
-  <div class="large-8 columns">
+  <div class="span7">
     <p>Crawlera is a smart HTTP/HTTPS proxy designed specifically for
   scraping purposes. Although it provides a standard HTTP proxy
   interface it does a lot more internally, like throttling access to
@@ -21,20 +20,19 @@
   your crawler of choice and start scraping.
     <a href="{% url about %}">Read more</a>
   </div>
-  <div class="large-4 columns">
-    <div class="panel round">
-      <h3 class="center subheader">Can't wait to try?</h3>
-      <a class="button expand" data-reveal-id="signup">Sign up</a>
+  <div class="span3">
+    <div class="well round">
+      <p class="lead">Can't wait to try?</p>
+      <a href="#signup" class="btn btn-primary btn-block btn-large"
+  role="button" data-toggle="modal" type="button">Sign up</a>
     </div>
   </div>
 </div>
 <div class="row">
-  <div class="large-8 columns">
+  <div class="span10">
     <h3>Example</h3>
     <p>Using Crawlera as easy as running following command:
-    <div class="panel">
-      curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com
-    </div>
+    <pre>    curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com</pre>
     <a href="{% url examples %}">More examples</a>
   </div>
 </div>

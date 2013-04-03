@@ -8,11 +8,11 @@
  
 {% block page-content %}
 <div class="row">
-  <div class="large-10 columns">
-    <h2>Overview</h2>
+  <div class="span10">
+  <h3>Overview</h3>
     <p>Crawlera provides an HTTP proxy, with a pool of rotating IPs, designed specifically for scraping purposes. Although it provides a standard HTTP proxy interface it does a lot more internally, like throttling access to domains by introducing delays and discarding IPs from the pool when they get banned or have other problems. As a scraping user, you no longer have to worry about tinkering with download delays, concurrent requests, user agents, cookies or referrers to avoid getting banned from sites, you just configure the proxy and fire up your crawler of choice and start scraping.
     
-    <h2>How does it work?</h2>
+    <h3>How does it work?</h3>
     <p>Crawlera architecture is based on a group of “master” proxies that receive the user requests and distribute them among many internal “slave” proxies.
     <p>The internal slave proxies are just plain simple HTTP proxies (like one you would run with Squid or similar software) with no extra logic.
     The masters, however, implement a proprietary algorithm to minimize the risks of getting banned, by throttling requests sent to sites from each internal slave, among other techniques. If, for whatever reason, any slaves do get banned anyway, the masters will detect and avoid using them in the future for those particular sites.
@@ -28,14 +28,10 @@
     particular domain. In this case, the user may choose to reserve
     dedicated slaves to increase the capacity. Also, thanks to how
     Crawlera architecture works, users can supply their own proxies to
-    be used as slave. See <a href="{% url pricing %}">Pricing</a> for more details.
-
-</div>
-</div class="large-4 columns">
-
+    be used as slave. See <a href="{% url pricing %}">Pricing</a> for
+    more details.
 </div>
 </div>
-
 {% endblock %}
 
 

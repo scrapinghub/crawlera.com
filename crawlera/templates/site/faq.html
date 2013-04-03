@@ -4,35 +4,37 @@
 
 {% block page-content %}
 <div class="row">
-<h2>Frequently Asked Questions</h2>
+  <div class="span10">
+<h3>Frequently Asked Questions</h3>
 
-<h3 class="subheader">How does Crawlera compare to other proxy providers?</h3>
+<h4 class="subheader">How does Crawlera compare to other proxy providers?</h4>
 <p>Other proxy vendors typically provide a pool of IPs running simple HTTP proxies (often using Squid) whereas Crawlera provides a single master proxy that distributes the requests among many slaves, keeps track of which slaves are banned (per domain), and throttles the requests to make sure no domain is hit too fast from a single IP, thus minimizing the risk of your crawler getting banned or causing serious problems for the websites being crawled.
 <p>With other proxy providers, you have to implement the throttling yourself, while with Crawlera you only configure your crawler to use the proxy and let Crawlera deal with the throttling: you just fire off your crawler with no delays, and the proxy will crawl as fast as it cans.</p>
 
-<h3 class="subheader">How many IPs does Crawlera provide?</h3>
+<h4 class="subheader">How many IPs does Crawlera provide?</h4>
 <p>It varies and it’s not very relevant, as long as it stays above a certain threshold (which we always guarantee).
 This is a very common question because, in most proxy providers, the number of IPs determine how fast you can crawl sites, which is often what you want to find out when you ask that question. However, Crawlera is different. The number of IPs doesn’t matter much because it is Crawlera (not the user) which throttles speed and request delays (to prevent users getting banned) and there is an imposed global limit on how fast any single site can be crawled through Crawlera, so adding more IPs (above a certain threshold) won’t help to speed up the crawl. We do our best to ensure we always have enough IPs to crawl sites at this maximum speed.
 
-<h3 class="subheader">Why is Crawlera so slow from a browser?</h3>
+<h4 class="subheader">Why is Crawlera so slow from a browser?</h4>
 <p>This is common misconception. We often get this question from users who try Crawlera in their browsers, which (even though it works) it’s not the way it’s intended to be used. Unlike typical proxy providers, Crawlera is specifically designed for crawling, by throttling requests speed to avoid users getting banned. This throttling translates to a perception of Crawlera being slow when tried in a browser. Continue reading to understand why.
 <p>When you access a web page in a browser, you typically have to download many resources to render it (images, CSS styles, javascript code, etc) an each resource is a different request that needs to be performed against the site. Compare this to crawling, where you typically only download the page HTML source. Not only you need to perform many requests to render a single page, but web browsers also limit the number of concurrent requests performed to any single site. All this translates to Crawlera looking slow when tried from a web browser. But this “slowness” is actually a feature for the purpose that Crawlera is intended to be used.
 
 
-<h3 class="subheader">Can I use my own User Agent?</h3>
+<h4 class="subheader">Can I use my own User Agent?</h4>
 <p>You may have noticed that Crawlera ignores the User-Agent you pass in the requests and injects its own. This is intentional and it’s part of the anti-bot detection mechanism that Crawlera enforces to keep crawlers from getting banned. User agents are in fact kept the same within the same “crawl session” (and do not blindly rotate in random fashion) to emulate better the behaviour of a browser.
 The other reason for overriding the user-agent is that we want websites to be able to contact us if our crawls are causing them any trouble. Crawlera is designed to be polite and this should never happen, although there is always a chance. Having been in the crawling business for a while, we know how important is to identify your crawler properly and provide a way for website owners to contact us. It’s important to highlight that we will <b>never disclose any customer information</b>, but we may have to occasionally stop a crawl if there is a complain.
 
-<h3 class="subheader">Are POST requests supported?</h3>
+<h4 class="subheader">Are POST requests supported?</h4>
 <p>No. This is because Crawlera may retry requests internally (when it detects bans) and POST requests cannot be safely retried because they are not idempotent. We may allow POSTs in future without retrying.
 
-<h3 class="subheader">Can I use Crawlera with other crawlers than Scrapy?</h3>
+<h4 class="subheader">Can I use Crawlera with other crawlers than Scrapy?</h4>
 <p>Absolutely. Crawlera is not tied to Scrapy in any way. The Crawlera service provides a standard HTTP proxy interface that can be used with any crawler or browser that supports proxies (most of them do). This page contains information on how to use it with other clients, including the standard curl.
 
-<h3 class="subheader">What language is Crawlera written on?</h3>
+<h4 class="subheader">What language is Crawlera written on?</h4>
 <p>Erlang.
 
-<h3 class="subheader">Do you plan to release Crawlera as open source?</h3>
+<h4 class="subheader">Do you plan to release Crawlera as open source?</h4>
  <p>Not for the moment.
+</div>
 </div>
 {% endblock %}

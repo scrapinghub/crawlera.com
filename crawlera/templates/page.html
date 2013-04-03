@@ -3,64 +3,138 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
 <title>Crawlera</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="{{ STATIC_URL}}css/normalize.css" />
-<link rel="stylesheet" href="{{ STATIC_URL}}css/foundation.css" />
 
-<script src="{{ STATIC_URL}}js/vendor/custom.modernizr.js"></script>
-<script src="{{ STATIC_URL}}js/vendor/jquery.js"></script>
-<script src="{{ STATIC_URL}}js/foundation.min.js"></script>
-<script>
-  $(document).foundation();
-</script>
+<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+
+<link href="{{ STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{{ STATIC_URL}}js/libs/modernizr-2.6.2.min.js"></script>
+<script src="{{ STATIC_URL}}js/bootstrap.min.js"></script>
+
+<style>
+.logo {
+    font-family: 'Carrois Gothic', serif;
+}
+
+.logo a {
+    color: black;
+}
+
+.logo a:hover {
+   text-decoration: none;
+   color: black;
+}
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+        background: none;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+pre {
+   color: darkred;
+}
+h4 {
+padding-top: 10px;
+}
+</style>
 </head>
 <body>
-<nav class="top-bar">
-  <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><a href="{% url home %}">Crawlera</a></h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="{% url home %}"><span>Menu</span></a></li>
-  </ul>
- <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li class="divider"></li>
-      <li {% block nav-about %}{% endblock %}><a href="{% url about %}">About</a></li>
-      <li class="divider"></li>
-      <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}">Pricing</a></li>
-      <li class="divider"></li>
-      <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}">FAQ</a></li>
-      <li class="divider"></li>
-      <li {% block nav-examples %}{% endblock %}><a href="{% url examples %}">Examples</a></li>
-      <li class="divider"></li>
-    </ul>
+<div class="container">
+  <div class="masthead">
+    <h2 class="logo"><a href="{% url home%}">Crawlera</a></h2>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav">
+            <li {% block nav-about %}{% endblock %}><a href="{% url about %}">About</a></li>
+            <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}">Pricing</a></li>
+            <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}">FAQ</a></li>
+            <li {% block nav-examples %}{% endblock %}><a href="{% url examples %}">Examples</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="divider hide-for-small"></li>
-      <li class="has-form">
-        <form>
-          <div class="row collapse">
-            <div class="small-4 columns">
-            </div>
-          </div>
-        </form>
-      </li>
-    </ul>
-  </section>
-</nav>
 <div class="container">
  {% block page-content %}
  {% endblock %}
 </div>
-<div id="signup" class="reveal-modal large" style="height: 700px">
-  <iframe width="100%" height="100%" seamless="seamless" scrolling="no" src="http://scrapinghub.wufoo.eu/forms/sign-up-for-our-proxy-hub-beta-program/"></iframe>
-  <a class="close-reveal-modal">&#215;</a>
+
+<div id="signup" class="modal hide fade" style="width: 700px; height: 650px">
+     <iframe width="100%" height="100%" seamless="seamless" src="http://scrapinghub.wufoo.eu/forms/sign-up-for-our-proxy-hub-beta-program/"></iframe>
 </div>
 </body>
 </html>

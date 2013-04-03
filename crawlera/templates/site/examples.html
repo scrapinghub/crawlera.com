@@ -4,31 +4,33 @@
 
 {% block page-content %}
 <div class="row">
-<h2>Examples</h2>
+  <div class="span10">
+<h3>Examples</h3>
 
-<h3>cURL</h3>
+<h4>cURL</h4>
 <p>Crawlera provides a standard HTTP proxy interface so you can use it with any software that supports them.
 Here is an example using Crawlera with curl to download <a href="http://crawlera.com">http://crawlera.com</a>:
 
-<div class="panel">
+<pre>
   curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com
-</div>
+</pre>
 
-<h3>Command-line tools</h3>
+
+<h4>Command-line tools</h4>
 <p>Several Unix commands (like wget and curl) and applications (including Scrapy) support the http_proxy environment variable to configure the HTTP proxy to use.
 You can configure before running your command with:
-<div class="panel">
+<pre>
   export http_proxy=http://USER:PASS@proxy.crawlera.com:8010
-</div>
+</pre>
 
-<h3>API</h3>
+<h4>API</h4>
 <p>You can use REST API to fetch content.
 <p>Currently this is the only way to fetch sites via HTTPS
-<div class="panel">
+<pre>
   curl http://USER:PASS@proxy.crawlera.com:8010/fetch?url=http://crawlera.com
-</div>
+</pre>
 
-<h3>Scrapy</h3>
+<h4>Scrapy</h4>
 <p>To use Crawlera with Scrapy you could just set the http_proxy
     environment setting (as explained in the previous
 section). However, if you need more functionality (like
@@ -37,8 +39,8 @@ the HubProxyMiddleware, provided in the scrapylib project.
 
 <p>Download the scrapylib project, and enable the middleware by
 adding this to your Scrapy settings:
-<div class="panel">
+<pre>
   DOWNLOADER_MIDDLEWARES = {'scrapylib.hubproxy.HubProxyMiddleware': 600}
-</div>
+</pre>
 </div>
 {% endblock %}
