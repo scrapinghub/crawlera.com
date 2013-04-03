@@ -133,8 +133,30 @@ padding-top: 10px;
  {% endblock %}
 </div>
 
-<div id="signup" class="modal hide fade" style="width: 700px; height: 650px">
-     <iframe width="100%" height="100%" seamless="seamless" src="http://scrapinghub.wufoo.eu/forms/sign-up-for-our-proxy-hub-beta-program/"></iframe>
+<div id="signup" class="modal hide fade">
+   <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+     <h3>Crawlera sign up</h3>
+   </div>
+  <div class="modal-body">
+  <div id="wufoo-k7x2z1">
+Fill out my <a href="http://scrapinghub.wufoo.com/forms/k7x2z1">online form</a>.
+</div>
+<script type="text/javascript">var k7x2z1;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'scrapinghub', 
+'formHash':'k7x2z1', 
+'autoResize':true,
+'height':'700',
+'async':true,
+'header':'show'};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { k7x2z1 = new WufooForm();k7x2z1.initialize(options);k7x2z1.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
+ </div>
 </div>
 </body>
 </html>
