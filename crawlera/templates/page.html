@@ -114,6 +114,8 @@ padding-top: 10px;
 </head>
 <body>
 <div class="container">
+<div class="pull-right" style="padding-right:10px;padding-top:25px"><a href="{% url
+   signup %}">Sign up</a></div>
   <div class="masthead">
     <h2 class="logo"><a href="{% url home%}">Crawlera</a></h2>
     <div class="navbar">
@@ -125,7 +127,7 @@ padding-top: 10px;
             <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}">Pricing</a></li>
             <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}">FAQ</a></li>
             <li {% block nav-examples %}{% endblock %}><a href="{% url examples %}">Examples</a></li>
-            <li {% block nav-feedback %}{% endblock %}><a href="{% url feedback %}">Contact</a></li>
+            <li {% block nav-feedback %}{% endblock %}><a href="{% url feedback %}">Support</a></li>
           </ul>
         </div>
       </div>
