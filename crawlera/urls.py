@@ -20,11 +20,11 @@ def site(name, pattern=None, template=None, **kwargs):
 
 urlpatterns = patterns('django.views.generic.simple',
     site('home', pattern = ''),
-    site('about'),
+    site('features'),
     site('pricing'),
     site('api'),
     site('faq'),
-    site('examples'),
+    site('usage'),
     site('feedback'),
     site('signup')
     # Examples:

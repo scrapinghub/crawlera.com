@@ -128,10 +128,10 @@ padding-top: 10px;
         <div class="container">
           <ul class="nav">
             <li><a href="{% url home%}"><i class="icon-home"></i></a></li>
-            <li {% block nav-about %}{% endblock %}><a href="{% url about %}">About</a></li>
+            <li {% block nav-features %}{% endblock %}><a href="{% url features %}">Features</a></li>
             <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}">Pricing</a></li>
             <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}">FAQ</a></li>
-            <li {% block nav-examples %}{% endblock %}><a href="{% url examples %}">Examples</a></li>
+            <li {% block nav-usage %}{% endblock %}><a href="{% url usage %}">Usage</a></li>
             <li {% block nav-feedback %}{% endblock %}><a href="{% url feedback %}">Support</a></li>
           </ul>
         </div>
