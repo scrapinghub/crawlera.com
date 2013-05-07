@@ -7,35 +7,60 @@
   <div class="span10">
 <h3>Frequently Asked Questions</h3>
 
-<h4 class="subheader">Is Crawlera a proxy provider?</h4>
+<ul>
+    <li><a href="#proxy-or-not">Is Crawlera a proxy provider?</a></li>
+    <li><a href="#ips">How many nodes (or IPs) does Crawlera have?</a></li>
+    <li><a href="#https">Is HTTPS supported?</a></li>
+    <li><a href="#browser">Why is Crawlera slow from a browser?</a></li>
+    <li><a href="#user-agent">Can I use my own user agent?</a></li>
+    <li><a href="#language">What language is Crawlera written on?</a></li>
+    <li><a href="#open-source">Do you plan to release Crawlera as open source?</a></li>
+    <li><a href="#other">I have another question, where should I ask?</a></li>
+</ul>
+
+<h4 id="proxy-or-not" class="subheader">Is Crawlera a proxy provider?</h4>
 <p>No. Crawlera is a service to download web pages, which supports an HTTP Proxy API.</p>
 
 <p>Proxy vendors typically provide a pool of IPs running simple HTTP proxies (using Squid or similar software) whereas Crawlera provides an API for downloading web pages, distributing requests among many nodes, keeping track of which nodes are blacklisted (per domain), and throttling them to make sure domains crawled politely, which minimizing the risk of getting your crawler banned.</p>
 <p>With proxy providers, you have to implement the throttling logic yourself. With Crawlera you only configure your crawler to download pages through Crawlera and forget about throttling or implementing anti-ban policies. Crawlera enables you to crawl as fast as possible without causing any disruption to the sites.</p>
 
-<h4 class="subheader">How many nodes (or IPs) does Crawlera have?</h4>
+<h4 id="ips" class="subheader">How many nodes (or IPs) does Crawlera have?</h4>
 <p>It varies continuously and it’s not very relevant, as long as it stays above a certain threshold (which we always guarantee).</p>
 <p>This question is very common in the proxy provider world because the number of IPs determine how fast you can crawl sites. However, Crawlera is different. The number of IPs doesn't matter much because it is Crawlera (not the user) which throttles requests so there is a global limit at which point adding more IPs won't increase crawl speeds. However, this can be revised and tuned per site under request.
 </p>
 
-<h4 class="subheader">Why is Crawlera so slow from a browser?</h4>
+<h4 id="https" class="subheader">Is HTTPS supported?</h4>
+
+<p>Yes, but there's a small caveat: The Crawlera Proxy API doesn't the CONNECT method, so HTTPS urls won't work with the standard proxy configuration (that most HTTP clients and agent support).</p>
+
+<p>To fetch HTTPS urls you can either use the <a href="https://www.mashape.com/scrapinghub/crawlera#!endpoint-fetch">fetch API</a>, or configure your HTTP client to use a HTTP proxy even for HTTPS urls. However, not many clients support this for privacy reasons that don't apply to web crawling. cURL doesn't support it, but lwp-request does. Here are some examples:</p>
+
+<p>Using the <a href="https://www.mashape.com/scrapinghub/crawlera#!endpoint-fetch">fetch API</a>:</p>
+
+<pre>curl -u USER:PASS http://proxy.crawlera.com:8010/fetch?url=https://twitter.com</pre>
+
+<p>Using the HTTP proxy API with lwp-request:</p>
+
+<pre>lwp-request -p http://USER:PASS@proxy.crawlera.com:8010 https://twitter.com/</pre>
+
+<h4 id="browser" class="subheader">Why is Crawlera slow from a browser?</h4>
 
 <p>This is common misconception. We often get this question from users who try Crawlera in their browsers, which (even though it works) it's not the way it's intended to be used. Unlike a standard proxy, Crawlera is designed for crawling and throttles requests speed to avoid users getting banned or imposing too much load on websites. This throttling translates to a perception of Crawlera being slow when tried in a browser. Continue reading to understand why.</p>
 
 <p>When you access a web page in a browser, you typically have to download many resources to render it (images, CSS styles, javascript code, etc) an each resource is a different request that needs to be performed against the site. Compare this to crawling, where you typically only download the page HTML source. Not only you need to perform many requests to render a single page, but web browsers also limit the number of concurrent requests performed to any single site. All this translates to Crawlera looking slow when tried from a web browser. But this “slowness” is actually a feature for the purpose that Crawlera is intended to be used.</p>
 
+<h4 id="user-agent" class="subheader">Can I use my own User Agent?</h4>
 
-<h4 class="subheader">Can I use my own User Agent?</h4>
 <p>You may have noticed that Crawlera ignores the User-Agent you pass in the requests and injects its own. This is intentional and it's part of the internal crawling algorithm that Crawlera employs to keep crawlers from getting banned. User agents are in fact kept the same during the same "crawl session" (and do not blindly rotate in random fashion) to emulate better the behaviour of a browser.</p>
 <p>The other reason for overriding the user-agent is that we want websites to be able to contact us if our crawls are causing them any trouble. Crawlera is designed to be polite and this should never happen, although there is always a chance. Having been in the crawling business for a while, we know how important is to identify your crawler properly and provide a way for website owners to contact us. It's important to highlight that we will <b>never disclose any customer information</b>, but we may have to occasionally stop a crawl if there is a complain.</p>
 
-<h4 class="subheader">What language is Crawlera written on?</h4>
+<h4 id="language" class="subheader">What language is Crawlera written on?</h4>
 <p>Erlang.
 
-<h4 class="subheader">Do you plan to release Crawlera as open source?</h4>
+<h4 id="open-source" class="subheader">Do you plan to release Crawlera as open source?</h4>
 <p>Not for the moment.</p>
 
-<h4 class="subheader">I have another question, where should I ask?</h4>
+<h4 id="other" class="subheader">I have another question, where should I ask?</h4>
 <p>Please, feel free to <a href="{%url feedback%}">contact us</a></p>
 </div>
 
