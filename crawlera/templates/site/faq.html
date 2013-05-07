@@ -31,7 +31,7 @@
 
 <h4 id="https" class="subheader">Is HTTPS supported?</h4>
 
-<p>Yes, but there's a small caveat: The Crawlera Proxy API doesn't the CONNECT method, so HTTPS urls won't work with the standard proxy configuration (that most HTTP clients and agent support).</p>
+<p>Yes, but there's a small caveat: The Crawlera Proxy API doesn't support the CONNECT method, so HTTPS urls won't work with the standard proxy configuration (that most HTTP clients and agent support).</p>
 
 <p>To fetch HTTPS urls you can either use the <a href="https://www.mashape.com/scrapinghub/crawlera#!endpoint-fetch">fetch API</a>, or configure your HTTP client to use a HTTP proxy even for HTTPS urls. However, not many clients support this for privacy reasons that don't apply to web crawling. cURL doesn't support it, but lwp-request does. Here are some examples:</p>
 
