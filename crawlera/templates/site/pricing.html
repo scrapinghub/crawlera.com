@@ -5,48 +5,61 @@
 {% block page-content %}
 <div class="row">
   <div class="span10">
-  <h3>Pricing</h3>
-  <p>Unlike other proxy providers, Crawlera offers a simple pricing
-  model, where you only pay for successful requests. This means that
-  you will not be charged if there is no capacity for processing your
-  request from a clean slave. You also have the option to reserve
-  additional slave proxies to use exclusively for your requests (thus
-  preventing other customer requests interfering with yours) or even
-  supply your own proxies to the pool of slaves.
-    <p>
+  <h3>Pricing &amp; Sign up</h3>
+  <p>Crawlera offers multiple plans and options to subscribe. In all cases, you
+  only pay for successful requests. This means that you will not be charged if
+  there are no clean nodes to download your page from.<p>
   </div>
 </div>
 <p>
 <div class="row">
- <div class="span2">
-   &nbsp;
-   </div>
 <div class="span3">
 	<div class="well">
-		<h2 class="text-info">Pay as you go</h2>
-		<p><span class="label label-info">POPULAR</span></p>
+		<h2 class="text-success">Mashape</h2>
 		<ul>
-			<li>$0.0001 per successful request</li>
-			<li>No bandwidth limits</li>
-			<li>Most domains available</li>
-			<li>E-mail support</li>
+			<li>Easier to get started</li>
+                        <li>Free trial available</li>
+			<li>Many domains allowed</li>
+                        <li>HTTPS and POST requests</li>
+			<li>Public support</li>
 		</ul>          
 		<hr>
-        <p><a href="#signup" class="btn btn-primary btn-large" role="button" data-toggle="modal" type="button">Sign up</a></p>
+                <p style="text-align: center;"><span id="mashape-button" data-api="crawlera" data-name="scrapinghub" data-icon="1"></span><script src="https://www.mashape.com/embed/button.js"></script></p>
 	</div>
 </div>
 <div class="span3">
 	<div class="well">
-		<h2 class="text-warning">Custom</h2>
-      <p><span class="label label-warning">INDIVIDUAL</span></p>
+		<h2 class="text-warning">Pay as you go</h2>
+		<ul>
+                    <li>Tiered per-page pricing</li>
+                    <ul>
+                        <li>0-25k &rarr; $0.001/page</li>
+                        <li>25k-250k &rarr; $0.0005/page</li>
+                        <li>250k-&infin; &rarr; $0.0001/page</li>
+                    </ul>
+                    <li>HTTP Proxy API available</li>
+			<li>Many domains allowed</li>
+                        <li>HTTPS and POST requests</li>
+			<li>Public support</li>
+		</ul>          
+		<hr>
+        <p style="text-align: center;"><a href="{% url signup%}" class="btn btn-primary" role="button" type="button">Sign up</a></p>
+	</div>
+</div>
+<div class="span3">
+	<div class="well">
+		<h2 class="text-error">Enterprise</h2>
 		<ul>
 			<li>Fixed monthly price</li>
-			<li>No bandwidth available</li>
-			<li>All domains available</li>
-            <li>Best suited for large volumes</li>
+                        <li>HTTP Proxy API</li>
+                        <li>HTTPS and POST requests</li>
+                        <li>Allocated capacity</li>
+			<li>Any domain allowed</li>
+			<li>No volume restrictions</li>
+			<li>Private email support</li>
 		</ul>          
 			<hr>
-        <p><a href="{%url feedback%}" class="btn btn-success btn-primary btn-large"
+        <p style="text-align: center;"><a href="{%url feedback%}" class="btn btn-success btn-primary"
         role="button" type="button">Contact us</a></p>
 	</div>
 </div>

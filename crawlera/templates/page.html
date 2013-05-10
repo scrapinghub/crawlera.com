@@ -7,9 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="DjkyBOdMR0ikOHKSpYZQfk6gl05XZjfud-4KzX0O3Js" />
 
-<link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Orbitron|Open+Sans' rel='stylesheet' type='text/css'>
 
 <link href="{{ STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
 
@@ -19,18 +17,25 @@
 
 <style>
 .logo {
-    font-family: 'Carrois Gothic', serif;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: normal;
+    background-image: url("../static/img/crawlera.png");
+    background-repeat: no-repeat;
+    padding-top: 4px;
+    padding-left: 60px;
+    color: #008;
 }
 
 .logo a {
-    color: black;
+    color: #008;
 }
 
 .logo a:hover {
    text-decoration: none;
-   color: black;
+   color: #008;
 }
       body {
+        font-family: 'Open Sans';
         padding-top: 20px;
         padding-bottom: 60px;
       }
@@ -114,6 +119,8 @@ padding-top: 10px;
 </head>
 <body>
 <div class="container">
+<div class="pull-right" style="padding-right:10px;padding-top:25px"><a
+   href="{% url pricing %}">Sign up</a></div>
   <div class="masthead">
     <h2 class="logo"><a href="{% url home%}">Crawlera</a></h2>
     <div class="navbar">
@@ -121,10 +128,11 @@ padding-top: 10px;
         <div class="container">
           <ul class="nav">
             <li><a href="{% url home%}"><i class="icon-home"></i></a></li>
-            <li {% block nav-about %}{% endblock %}><a href="{% url about %}">About</a></li>
+            <li {% block nav-features %}{% endblock %}><a href="{% url features %}">Features</a></li>
             <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}">Pricing</a></li>
             <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}">FAQ</a></li>
-            <li {% block nav-examples %}{% endblock %}><a href="{% url examples %}">Examples</a></li>
+            <li {% block nav-usage %}{% endblock %}><a href="{% url usage %}">Usage</a></li>
+            <li {% block nav-feedback %}{% endblock %}><a href="{% url feedback %}">Support</a></li>
           </ul>
         </div>
       </div>
@@ -137,38 +145,14 @@ padding-top: 10px;
  {% endblock %}
 </div>
 
-<div id="signup" class="modal hide fade" style="width: 700px">
-   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-     <h3>Sign up for our Crawlera beta program</h3>
-     <small>If you would like to join our private beta program for Crawlera, please fill out the form below.</small>
-   </div>
-  <div class="modal-body">
-  <div id="wufoo-k7x2z1">
-Fill out my <a href="http://scrapinghub.wufoo.com/forms/k7x2z1">online form</a>.
-</div>
-<script type="text/javascript">
-var k7x2z1;var F; (function(d, t) {
-var s = d.createElement(t), options = {
-'userName':'scrapinghub', 
-'formHash':'k7x2z1', 
-'autoResize':false,
-'height':'550',
-'async':true,
-'header':'hide'};
-s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-s.onload = s.onreadystatechange = function() {
-var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-try { k7x2z1 = new
-   WufooForm();k7x2z1.initialize(options);k7x2z1.display(); } catch
-   (e) {}
-F = k7x2z1;
-};
-var scr = d.getElementsByTagName(t)[0], par = scr.parentNode;
-   par.insertBefore(s, scr);
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-20306421-3', 'crawlera.com');
+ga('send', 'pageview');
+</script>
 
-})(document, 'script');</script>
- </div>
-</div>
 </body>
 </html>

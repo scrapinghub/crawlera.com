@@ -20,12 +20,13 @@ def site(name, pattern=None, template=None, **kwargs):
 
 urlpatterns = patterns('django.views.generic.simple',
     site('home', pattern = ''),
-    site('about'),
+    site('features'),
     site('pricing'),
     site('api'),
     site('faq'),
-    site('examples'),
-    site('feedback')
+    site('usage'),
+    site('feedback'),
+    site('signup')
     # Examples:
     # url(r'^$', 'crawlera.views.home', name='home'),
     # url(r'^crawlera/', include('crawlera.foo.urls')),

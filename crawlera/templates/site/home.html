@@ -9,34 +9,60 @@
 
 <div class="row">
   <div class="span7">
-    <p>Crawlera is a smart HTTP/HTTPS proxy designed specifically for
-  scraping purposes. Although it provides a standard HTTP proxy
-  interface it does a lot more internally, like throttling access to
-  domains by introducing delays and discarding IPs from the pool when
-  they get banned or have other problems. As a scraping user, you no
-  longer have to worry about tinkering with download delays,
-  concurrent requests, user agents, cookies or referrers to avoid
-  getting banned from sites, you just configure the proxy and fire up
-  your crawler of choice and start scraping.
-    <a href="{% url about %}">Read more</a>
+    <p>Crawlera is a smart HTTP/HTTPS downloader designed specifically for
+    web crawling and scraping. It routes requests through a pool of IPs,
+    throttling access by introducing delays and discarding IPs from the pool
+    when they get banned from certain domains, or have other problems.
+
+    As a scraping user, you no longer have to worry about tinkering with
+    download delays, concurrent requests, user agents, cookies or referrers to
+    avoid getting banned, you just use Crawlera to download pages instead.
+
+    Some plans provide an standard HTTP proxy API, so you can configure it in
+    your crawler of choice and start crawling.
   </div>
   <div class="span3">
     <div class="well round">
-      <p class="lead">Can't wait to try?</p>
-      <a href="#signup" class="btn btn-primary btn-block btn-large"
-  role="button" data-toggle="modal" type="button">Sign up</a>
+      <p class="lead">We are in public beta!</p>
+      <a href="{% url pricing %}" class="btn btn-primary btn-block btn-large"
+  role="button" type="button">Sign up</a>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="span10">
+    <h3>How does it work?</h3>
+    <p>Crawlera distributes requests among many internal nodes, using a
+proprietary algorithm to minimize the risks of getting banned, by throttling
+requests sent to sites from each internal node. If, for whatever reason, any
+node gets banned, Crawlera will blacklist it and avoid using it for future
+requests to that domain.
+</p>
+
+<p>Banned requests typically return a non-200 response (like 403 or 503), or
+redirect to a captcha page. These responses are detected by Crawlera and the
+requests are automatically retried from another (clean) node. This is just a
+very brief introduction of what happens inside Crawlera, the details are more
+sophisticated.</p>
+
+<p>All this logic happens inside Crawlera and the user doesn't have to worry
+about it. The user receives a clean response or a 503 error if all internal
+nodes are blacklisted (which usually doesn't happen, except for very popular
+domains). Only successful downloads are charged.</p>
+
+<p>If you need more bandwidth, you can contact support and reserve exclusive
+nodes to increase the capacity, or supply your own nodes (as HTTP proxies) and
+use them from Crawlers to benefit from its smart downloading mechanism.
+
+See <a href="{%url pricing %}">Pricing</a> for more details.
+</p>
+
     <h3>Example</h3>
-    <p>Using Crawlera as easy as running following command:
+    <p>Using Crawlera can be as easy as running following command:
     <pre>    curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com</pre>
-    <a href="{% url examples %}">More examples</a>
-    <h3>Feedback</h3>
-    Do you have a question? Do you want to give some feedback or
-  request a feature? <a href="{%url feedback%}">We are listening.</a>
+    <a href="{% url usage %}">More usage examples</a>
+    <h3>Feedback and support</h3>
+    Do you have a question or suggestion? <a href="{%url feedback%}">Tell us about it!</a>
   </div>
 </div>
 {% endblock %}
