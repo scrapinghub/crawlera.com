@@ -26,12 +26,15 @@ You can configure before running your command with:
 
 <h4>Scrapy</h4>
 <p>To use Crawlera with Scrapy you can just set the http_proxy environment setting (as explained in command-line tools section).</p>
-<p>There is also a middleware called <a href="https://github.com/scrapinghub/scrapylib/blob/master/scrapylib/hubproxy.py">HubProxyMiddleware</a> (provided in the <a href="https://github.com/scrapinghub/scrapylib">scrapylib</a> library) that you can use if you need more functionality (like enabling Crawlera only for some specific spiders).</p>
+<p>There is also a middleware called <a href="https://github.com/scrapinghub/scrapylib/blob/master/scrapylib/crawlera.py">CrawleraMiddleware</a> (provided in the <a href="https://github.com/scrapinghub/scrapylib">scrapylib</a> library) that you can use if you need more functionality (like enabling Crawlera only for some specific spiders).</p>
 
 <p>Download the scrapylib project, and enable the middleware by
 adding this to your Scrapy settings:
 <pre>
-  DOWNLOADER_MIDDLEWARES = {'scrapylib.hubproxy.HubProxyMiddleware': 600}
+  DOWNLOADER_MIDDLEWARES = {''scrapylib.crawlera.CrawleraMiddleware: 600}
+  CRAWLERA_ENABLED = True
+  CRAWLERA_USER = 'your_username'
+  CRAWLERA_PASS = 'your_password'
 </pre>
 
 <h4>HTTP API</h4>
