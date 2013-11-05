@@ -1,0 +1,100 @@
+{% extends "page.html" %}
+
+{% block nav-api %} class="active"{% endblock %}
+{% block page-title %}Calculate{% endblock %}
+
+{% block page-content %}
+
+<div class="row">
+  <div class="span6">
+  	<h3>Calculate price</h3>
+  Please enter how much requests you plan to crawl per month
+  <input type="text" name="reqs" id="reqs">
+  <br/>
+  <a class="btn" id="calculate">Calculate!</a>
+  <br/><br/>
+  <table class="table">
+  	<tr>
+  		<th>Tier</th>
+  		<th>Number of requests</th>
+  		<th>Price</th>
+  		<th>Total</th>
+  	</tr>
+  	<tr>
+  		<td>0&mdash;25,000</td>
+  		<td><span class="t1">0</span></td>
+  		<td>0.001</td>
+  		<td><span class="t1-total">0</span></td>
+  	</tr>
+  	<tr>
+  		<td>25,000&mdash;250,000</td>
+  		<td><span class="t2">0</span></td>
+  		<td>0.0005</td>
+  		<td><span class="t2-total">0</span></td>
+  	</tr>
+  	<tr>
+  		<td>250,000&mdash;2,500,000</td>
+  		<td><span class="t3">0</span></td>
+  		<td>0.0001</td>
+  		<td><span class="t3-total">0</span></td>
+  	</tr>
+  	<tr>
+  		<td>2,500,000&mdash;1,000,000,000</td>
+  		<td><span class="t4">0</span></td>
+  		<td>0.00002</td>
+  		<td><span class="t4-total">0</span></td>
+  	</tr>
+  	<tr>
+  		<td></td>
+  		<td><span class="total-reqs">0</span></td>
+  		<td></td>
+  		<td><span class="total-sum">0</span></td>
+  	</tr>
+  </table>
+ 
+</div>
+</div>
+<script type="text/javascript">
+  $('#calculate').click(function() {
+    var requests = parseInt($('#reqs').val(), 10);
+
+    var tiers = {
+      't1': {
+        'range': [0,25e3],
+        'price': 0.001
+      },
+      't2': {
+        'range': [25e3,250e3],
+        'price': 0.0005
+      },
+      't3': {
+        'range': [250e3,2.5e6],
+        'price': 0.0001
+      },
+      't4': {
+        'range': [2.5e6,1e9],
+        'price': 0.00002
+      }
+    };
+
+    var sum = 0;
+    $.each(tiers, function(i, tier) {
+        if ( requests > tier['range'][0] ) {
+          var n = Math.min(tier['range'][1], requests)-tier['range'][0]
+          $('.' + i ).text(n);
+          $('.' + i + '-total').text(n*tier['price']);
+          sum += n*tier['price'];
+        } else {
+          $('.' + i ).text(0);
+          $('.' + i + '-total' ).text(0);
+        }
+    });
+    if ( $.isNumeric(requests) ) {
+      $('.total-reqs').text(requests);
+    } else {
+      $('.total-reqs').text('Invalid number');
+    }
+    $('.total-sum').text(sum);
+  });
+</script>
+{% endblock %}

@@ -26,7 +26,8 @@ urlpatterns = patterns('django.views.generic.simple',
     site('faq'),
     site('usage'),
     site('feedback'),
-    site('signup')
+    site('signup'),
+    site('calculate')
     # Examples:
     # url(r'^$', 'crawlera.views.home', name='home'),
     # url(r'^crawlera/', include('crawlera.foo.urls')),
