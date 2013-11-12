@@ -8,17 +8,15 @@
 <div class="row">
   <div class="span6">
   	<h3>Calculate price</h3>
-  Please enter how much requests you plan to crawl per month
+  Please enter how many requests you plan to crawl per month
   <input type="text" name="reqs" id="reqs">
-  <br/>
-  <a class="btn" id="calculate">Calculate!</a>
   <br/><br/>
   <table class="table">
   	<tr>
   		<th>Tier</th>
   		<th>Number of requests</th>
   		<th>Price</th>
-  		<th>Total</th>
+  		<th style="width: 90px;">Total</th>
   	</tr>
   	<tr>
   		<td>0&mdash;25,000</td>
@@ -55,7 +53,11 @@
 </div>
 </div>
 <script type="text/javascript">
-  $('#calculate').click(function() {
+  function addCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  $('#reqs').on('input', function() {
     var requests = parseInt($('#reqs').val(), 10);
 
     var tiers = {
@@ -81,8 +83,8 @@
     $.each(tiers, function(i, tier) {
         if ( requests > tier['range'][0] ) {
           var n = Math.min(tier['range'][1], requests)-tier['range'][0]
-          $('.' + i ).text(n);
-          $('.' + i + '-total').text(n*tier['price']);
+          $('.' + i ).text(addCommas(n));
+          $('.' + i + '-total').text(addCommas((n*tier['price']).toFixed(2)));
           sum += n*tier['price'];
         } else {
           $('.' + i ).text(0);
@@ -90,11 +92,13 @@
         }
     });
     if ( $.isNumeric(requests) ) {
-      $('.total-reqs').text(requests);
+      $('.total-reqs').text(addCommas(requests));
+    } else if ( $('#reqs').val() == '' ) {
+      $('.total-reqs').text('0')
     } else {
       $('.total-reqs').text('Invalid number');
     }
-    $('.total-sum').text(sum);
+    $('.total-sum').text(sum.toFixed(2));
   });
 </script>
 {% endblock %}

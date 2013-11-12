@@ -4,33 +4,36 @@
 
 {% block page-content %}
 <div class="row">
-  <div class="span10">
-  <h3>Pricing &amp; Sign up</h3>
-  <p>Crawlera offers multiple plans and options to subscribe. In all cases, you
-  only pay for successful requests. This means that you will not be charged if
-  there are no clean nodes to download your page from.<p>
-  </div>
+    <div class="span10">
+        <h3>Pricing &amp; Sign up</h3>
+        <p>Crawlera offers multiple plans and options to subscribe. In all cases, you
+          only pay for successful requests. This means that you will not be charged if
+          there are no clean nodes to download your page from.</p>
+    </div>
 </div>
 <p>
-<div class="row">
-<div class="span3">
-	<div class="well">
-		<h2 class="text-success">Mashape</h2>
-		<ul>
-			<li>Easier to get started</li>
-                        <li>Free trial available</li>
-			<li>Many domains allowed</li>
-                        <li>HTTPS and POST requests</li>
-			<li>Public support</li>
-		</ul>          
-		<hr>
-                <p style="text-align: center;"><span id="mashape-button" data-api="crawlera" data-name="scrapinghub" data-icon="1"></span><script src="https://www.mashape.com/embed/button.js"></script></p>
-	</div>
-</div>
-<div class="span3">
-	<div class="well">
-		<h2 class="text-warning">Pay as you go</h2>
-		<ul>
+    <div class="row">
+        <div class="span3">
+            <div class="well">
+                <h2 class="text-success">Mashape</h2>
+                <ul>
+                    <li>Easier to get started</li>
+                    <li>Free trial available</li>
+                    <li>Many domains allowed</li>
+                    <li>HTTPS and POST requests</li>
+                    <li>Public support</li>
+                </ul>
+                <hr>
+                <p style="text-align: center;">
+                    <span id="mashape-button" data-api="crawlera" data-name="scrapinghub" data-icon="1"></span>
+                    <script src="https://www.mashape.com/embed/button.js"></script>
+                </p>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="well">
+                <h2 class="text-warning">Pay as you go</h2>
+                <ul>
                     <li>Tiered per-page cost (<a href="http://support.scrapinghub.com/topic/205479-how-crawlera-tiered-pricing-works/">how it works</a>)</li>
                     <ul>
                         <li>0-25k &rarr; $0.001</li>
@@ -40,31 +43,37 @@
                         <li>25M-&infin; &rarr; ask</li>
                     </ul>
                     <li>HTTP Proxy API available</li>
-			<li>Many domains allowed</li>
-                        <li>HTTPS and POST requests</li>
-			<li>Public support</li>
-		</ul>          
-		<hr>
-        <p style="text-align: center;"><a href="{% url signup%}" class="btn btn-primary" role="button" type="button">Sign up</a></p>
-	</div>
-</div>
-<div class="span3">
-	<div class="well">
-		<h2 class="text-error">Enterprise</h2>
-		<ul>
-			<li>Fixed monthly price</li>
-                        <li>HTTP Proxy API</li>
-                        <li>HTTPS and POST requests</li>
-                        <li>Allocated capacity</li>
-			<li>Any domain allowed</li>
-			<li>No volume restrictions</li>
-			<li>Private email support</li>
-		</ul>          
-			<hr>
-        <p style="text-align: center;"><a href="{%url feedback%}" class="btn btn-success btn-primary"
-        role="button" type="button">Contact us</a></p>
-	</div>
-</div>
-</div>
-
+                    <li>Many domains allowed</li>
+                    <li>HTTPS and POST requests</li>
+                    <li>Public support</li>
+                </ul>
+                <hr>
+                <p style="text-align: center;">
+                    <a href="{% url signup%}" class="btn btn-primary" role="button" type="button">Sign up</a>
+                </p>
+                <p style="text-align: center;">
+                    <a href="/calculate">Calculate costs</a>
+                </p>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="well">
+                <h2 class="text-error">Enterprise</h2>
+                <ul>
+                    <li>Fixed monthly price</li>
+                    <li>HTTP Proxy API</li>
+                    <li>HTTPS and POST requests</li>
+                    <li>Allocated capacity</li>
+                    <li>Any domain allowed</li>
+                    <li>No volume restrictions</li>
+                    <li>Private email support</li>
+                </ul>
+                <hr>
+                <p style="text-align: center;">
+                    <a href="{%url feedback%}" class="btn btn-success btn-primary" role="button" type="button">Contact us</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</p>
 {% endblock %}
