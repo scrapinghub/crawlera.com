@@ -53,52 +53,67 @@
 </div>
 </div>
 <script type="text/javascript">
-  function addCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+$(function() {
+    function addCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
 
-  $('#reqs').on('input', function() {
-    var requests = parseInt($('#reqs').val(), 10);
+    $('#reqs').on('input', function() {
+        // replace commas back
+        var val = $('#reqs').val().replace(/,/g,'');
+        var requests = parseInt(val, 10);
 
-    var tiers = {
-      't1': {
-        'range': [0,25e3],
-        'price': 0.001
-      },
-      't2': {
-        'range': [25e3,250e3],
-        'price': 0.0005
-      },
-      't3': {
-        'range': [250e3,2.5e6],
-        'price': 0.0001
-      },
-      't4': {
-        'range': [2.5e6,1e9],
-        'price': 0.00002
-      }
-    };
-
-    var sum = 0;
-    $.each(tiers, function(i, tier) {
-        if ( requests > tier['range'][0] ) {
-          var n = Math.min(tier['range'][1], requests)-tier['range'][0]
-          $('.' + i ).text(addCommas(n));
-          $('.' + i + '-total').text(addCommas((n*tier['price']).toFixed(2)));
-          sum += n*tier['price'];
+        if ( isNaN(requests) ) {
+            $('#reqs').val('');
         } else {
-          $('.' + i ).text(0);
-          $('.' + i + '-total' ).text(0);
+            $('#reqs').val(addCommas(requests));
+        }
+
+        var tiers = {
+          't1': {
+            'range': [0,25e3],
+            'price': 0.001
+          },
+          't2': {
+            'range': [25e3,250e3],
+            'price': 0.0005
+          },
+          't3': {
+            'range': [250e3,2.5e6],
+            'price': 0.0001
+          },
+          't4': {
+            'range': [2.5e6,1e9],
+            'price': 0.00002
+          }
+        };
+
+        var sum = 0;
+        $.each(tiers, function(i, tier) {
+            if ( requests > tier['range'][0] ) {
+                var n = Math.min(tier['range'][1], requests) - tier['range'][0];
+                $('.' + i).text(addCommas(n));
+                $('.' + i + '-total').text(addCommas((n*tier['price']).toFixed(2)));
+                sum += n*tier['price'];
+            } else {
+                $('.' + i).text(0);
+                $('.' + i + '-total').text(0);
+            }
+        });
+        if ( $.isNumeric(requests) ) {
+            $('.total-reqs').text(addCommas(requests));
+        } else if ( $('#reqs').val() == '' ) {
+            $('.total-reqs').text('0')
+        } else {
+            $('.total-reqs').text('Invalid number');
+        }
+
+        if ( requests > 1e9 ) {
+            $('.total-sum').html('<a href="{% url feedback %}">Get a quote</a>');
+        } else {
+            $('.total-sum').text(addCommas(sum.toFixed(2)));
         }
     });
-    if ( $.isNumeric(requests) ) {
-      $('.total-reqs').text(addCommas(requests));
-    } else if ( $('#reqs').val() == '' ) {
-      $('.total-reqs').text('0')
-    } else {
-      $('.total-reqs').text('Invalid number');
-    }
-    $('.total-sum').text(sum.toFixed(2));
-  });
+});
 </script>
 {% endblock %}
