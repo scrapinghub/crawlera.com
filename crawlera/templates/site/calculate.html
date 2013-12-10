@@ -7,37 +7,37 @@
 
 <div class="row">
   <div class="span6">
-  	<h3>Calculate price</h3>
+  	<h3>Pay as you go pricing calculator</h3>
   Please enter how many requests you plan to crawl per month
   <input type="text" name="reqs" id="reqs">
   <br/><br/>
   <table class="table">
   	<tr>
-  		<th>Tier</th>
-  		<th>Number of requests</th>
+  		<th style="text-align: center;">Tier</th>
+  		<th>Number of pages</th>
   		<th>Price</th>
-  		<th style="width: 90px;">Total</th>
+  		<th style="width: 150px;">Total</th>
   	</tr>
   	<tr>
-  		<td>0&mdash;25,000</td>
+  		<td style="text-align: center;">0 &rarr; 25,000</td>
   		<td><span class="t1">0</span></td>
   		<td>0.001</td>
   		<td><span class="t1-total">0</span></td>
   	</tr>
   	<tr>
-  		<td>25,000&mdash;250,000</td>
+  		<td style="text-align: center;">25,000 &rarr; 250,000</td>
   		<td><span class="t2">0</span></td>
   		<td>0.0005</td>
   		<td><span class="t2-total">0</span></td>
   	</tr>
   	<tr>
-  		<td>250,000&mdash;2,500,000</td>
+  		<td style="text-align: center;">250,000 &rarr; 2,500,000</td>
   		<td><span class="t3">0</span></td>
   		<td>0.0001</td>
   		<td><span class="t3-total">0</span></td>
   	</tr>
   	<tr>
-  		<td>2,500,000&mdash;1,000,000,000</td>
+  		<td style="text-align: center;">2,500,000 &rarr; 1,000,000,000</td>
   		<td><span class="t4">0</span></td>
   		<td>0.00002</td>
   		<td><span class="t4-total">0</span></td>
@@ -46,7 +46,7 @@
   		<td></td>
   		<td><span class="total-reqs">0</span></td>
   		<td></td>
-  		<td><span class="total-sum">0</span></td>
+                <td><span class="total-sum"><b>$0</b> per month</span></td>
   	</tr>
   </table>
  
@@ -108,10 +108,10 @@ $(function() {
             $('.total-reqs').text('Invalid number');
         }
 
-        if ( requests > 1e9 ) {
+        if ( requests > 1e8 ) {
             $('.total-sum').html('<a href="{% url signup %}">Get a quote</a>');
         } else {
-            $('.total-sum').text(addCommas(sum.toFixed(2)));
+            $('.total-sum').html('<b>$' + addCommas(sum.toFixed(2) + '</b> per month'));
         }
     });
 });
