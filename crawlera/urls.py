@@ -25,7 +25,6 @@ urlpatterns = patterns('django.views.generic.simple',
     site('api'),
     site('faq'),
     site('usage'),
-    site('feedback'),
     site('signup'),
     site('calculate')
     # Examples:

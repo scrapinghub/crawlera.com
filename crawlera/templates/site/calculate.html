@@ -109,7 +109,7 @@ $(function() {
         }
 
         if ( requests > 1e9 ) {
-            $('.total-sum').html('<a href="{% url feedback %}">Get a quote</a>');
+            $('.total-sum').html('<a href="{% url signup %}">Get a quote</a>');
         } else {
             $('.total-sum').text(addCommas(sum.toFixed(2)));
         }

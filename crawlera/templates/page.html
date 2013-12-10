@@ -8,8 +8,8 @@
 <meta name="google-site-verification" content="DjkyBOdMR0ikOHKSpYZQfk6gl05XZjfud-4KzX0O3Js" />
 
 <link href='http://fonts.googleapis.com/css?family=Orbitron|Open+Sans' rel='stylesheet' type='text/css'>
-
 <link href="{{ STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="{{ STATIC_URL}}js/libs/modernizr-2.6.2.min.js"></script>
@@ -48,33 +48,6 @@
       .container > hr {
         margin: 60px 0;
       }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 80px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 100px;
-        line-height: 1;
-      }
-      .jumbotron .lead {
-        font-size: 24px;
-        line-height: 1.25;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-
 
       /* Customize the navbar links to be fill the entire space of the .navbar */
       .navbar .navbar-inner {
@@ -120,19 +93,22 @@ padding-top: 10px;
 <body>
 <div class="container">
 <div class="pull-right" style="padding-right:10px;padding-top:25px"><a
-   href="{% url pricing %}">Sign up</a></div>
+   class="btn btn-success btn-primary" href="{% url pricing %}">Sign up</a></div>
   <div class="masthead">
-    <h2 class="logo"><a href="{% url home%}">Crawlera</a></h2>
+    <h2 class="logo"><a href="{% url home%}">Crawlera</a>
+    <br>
+    <div style="font-size: 10px; margin-left: 78px; margin-top: -20px; color: #800;">by Scrapinghub</div>
+    </h2>
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
           <ul class="nav">
-            <li><a href="{% url home%}"><i class="icon-home"></i></a></li>
-            <li {% block nav-features %}{% endblock %}><a href="{% url features %}">Features</a></li>
-            <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}">Pricing</a></li>
-            <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}">FAQ</a></li>
-            <li {% block nav-usage %}{% endblock %}><a href="{% url usage %}">Usage</a></li>
-            <li {% block nav-feedback %}{% endblock %}><a href="{% url feedback %}">Support</a></li>
+            <li><a href="{% url home%}"><i class="fa fa-home"></i></a></li>
+            <li {% block nav-features %}{% endblock %}><a href="{% url features %}"><i class="fa fa-gears"></i> Features</a></li>
+            <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}"><i class="fa fa-dollar"></i> Pricing</a></li>
+            <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}"><i class="fa fa-question"></i> FAQ</a></li>
+            <li {% block nav-usage %}{% endblock %}><a href="{% url usage %}"><i class="fa fa-info"></i> Usage</a></li>
+            <li><a href="http://support.scrapinghub.com/list/19086-general/?category=4879"><i class="fa fa-phone"></i> Support</a></li>
           </ul>
         </div>
       </div>

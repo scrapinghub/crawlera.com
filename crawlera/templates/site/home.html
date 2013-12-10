@@ -3,12 +3,12 @@
 {% block page-content %}
 <div class="row">
   <div class="span12">
-    <h3>About</h3>
+    <h3>What is Crawlera?</h3>
   </div>
 </div>
 
 <div class="row">
-  <div class="span7">
+  <div class="span10">
     <p>Crawlera is a smart HTTP/HTTPS downloader designed specifically for
     web crawling and scraping. It routes requests through a pool of IPs,
     throttling access by introducing delays and discarding IPs from the pool
@@ -20,13 +20,6 @@
 
     Some plans provide a standard HTTP proxy API, so you can configure it in
     your crawler of choice and start crawling.
-  </div>
-  <div class="span3">
-    <div class="well round">
-      <p class="lead">We are in public beta!</p>
-      <a href="{% url pricing %}" class="btn btn-primary btn-block btn-large"
-  role="button" type="button">Sign up</a>
-    </div>
   </div>
 </div>
 <div class="row">
@@ -62,7 +55,7 @@ See <a href="{%url pricing %}">Pricing</a> for more details.
     <pre>    curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com</pre>
     <a href="{% url usage %}">More usage examples</a>
     <h3>Feedback and support</h3>
-    Do you have a question or suggestion? <a href="{%url feedback%}">Tell us about it!</a>
+    Do you have a question or suggestion? <a href="http://support.scrapinghub.com/list/19086-general/?category=4879">Tell us about it!</a>
   </div>
 </div>
 {% endblock %}
