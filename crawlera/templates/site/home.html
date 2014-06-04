@@ -10,7 +10,7 @@
 
 <div class="row">
   <div class="span10">
-    <p class="animated bounceInRight">Crawlera is a smart HTTP/HTTPS downloader designed specifically for
+    <p align="justify" class="animated bounceInRight">Crawlera is a smart HTTP/HTTPS downloader designed specifically for
     web crawling and scraping. It routes requests through a pool of IPs,
     throttling access by introducing delays and discarding IPs from the pool
     when they get banned from certain domains, or have other problems.
@@ -26,25 +26,25 @@
 <div class="row">
   <div class="span10">
     <h3 class="animated bounceInUp">How does it work?</h3>
-    <p class="animated bounceInUp">Crawlera distributes requests among many internal nodes, using a
+    <p align="justify" class="animated bounceInUp">Crawlera distributes requests among many internal nodes, using a
 proprietary algorithm to minimize the risks of getting banned, by throttling
 requests sent to sites from each internal node. If, for whatever reason, any
 node gets banned, Crawlera will blacklist it and avoid using it for future
 requests to that domain.
 </p>
 
-<p class="animated bounceInUp">Banned requests typically return a non-200 response (like 403 or 503), or
+<p align="justify" class="animated bounceInUp">Banned requests typically return a non-200 response (like 403 or 503), or
 redirect to a captcha page. These responses are detected by Crawlera and the
 requests are automatically retried from another (clean) node. This is just a
 very brief introduction of what happens inside Crawlera, the details are more
 sophisticated.</p>
 
-<p class="animated bounceInUp">All this logic happens inside Crawlera and the user doesn't have to worry
+<p align="justify" class="animated bounceInUp">All this logic happens inside Crawlera and the user doesn't have to worry
 about it. The user receives a clean response or a 503 error if all internal
 nodes are blacklisted (which usually doesn't happen, except for very popular
 domains). Only successful downloads are charged.</p>
 
-<p class="animated bounceInUp">If you need more bandwidth, you can contact support and reserve exclusive
+<p align="justify" class="animated bounceInUp">If you need more bandwidth, you can contact support and reserve exclusive
 nodes to increase the capacity, or supply your own nodes (as HTTP proxies) and
 use them from Crawlers to benefit from its smart downloading mechanism.
 
@@ -52,7 +52,7 @@ See <a href="{%url pricing %}">Pricing</a> for more details.
 </p>
 
     <h3 class="animated fadeInRightBig">Example</h3>
-    <p class="animated fadeInRightBig">Using Crawlera can be as easy as running following command:
+    <p align="justify" class="animated fadeInRightBig">Using Crawlera can be as easy as running following command:
     <pre class="animated fadeInRightBig">  curl -x proxy.crawlera.com:8010 -U USER:PASS http://crawlera.com</pre>
     <div align="center" class="animated bounceInUp"><a class="btnRedirect" href="http://scrapinghub.com/crawlera"><input type="submit" value="Learn More "></a></div>
   </div>
