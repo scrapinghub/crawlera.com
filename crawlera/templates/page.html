@@ -9,7 +9,10 @@
 
 <link href='http://fonts.googleapis.com/css?family=Orbitron|Open+Sans' rel='stylesheet' type='text/css'>
 <link href="{{ STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="{{ STATIC_URL}}css/animate.css" rel="stylesheet" />
+<link href="{{ STATIC_URL}}css/style.css" rel="stylesheet" />
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="{{ STATIC_URL}}js/libs/modernizr-2.6.2.min.js"></script>
@@ -91,28 +94,14 @@ padding-top: 10px;
 </style>
 </head>
 <body>
-<div class="container">
+<div class="container animated bounceInDown">
 <div class="pull-right" style="padding-right:10px;padding-top:25px"><a
-   class="btn btn-success btn-primary" href="{% url pricing %}">Sign up</a></div>
+   class="btn btn-success btn-primary" href="https://dash.scrapinghub.com/account/signup/">Sign up</a></div>
   <div class="masthead">
     <h2 class="logo"><a href="{% url home%}">Crawlera</a>
-    <br>
-    <div style="font-size: 10px; margin-left: 78px; margin-top: -20px; color: #800;">by Scrapinghub</div>
+        <br>
+        <div style="font-size: 10px; margin-left: 78px; margin-top: -20px; color: #800;">by Scrapinghub</div>
     </h2>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <ul class="nav">
-            <li><a href="{% url home%}"><i class="fa fa-home"></i></a></li>
-            <li {% block nav-features %}{% endblock %}><a href="{% url features %}"><i class="fa fa-gears"></i> Features</a></li>
-            <li {% block nav-pricing %}{% endblock %}><a href="{% url pricing %}"><i class="fa fa-dollar"></i> Pricing</a></li>
-            <li {% block nav-faq %}{% endblock %}><a href="{% url faq %}"><i class="fa fa-question"></i> FAQ</a></li>
-            <li {% block nav-usage %}{% endblock %}><a href="{% url usage %}"><i class="fa fa-info"></i> Usage</a></li>
-            <li><a href="http://support.scrapinghub.com/list/19086-general/?category=4879"><i class="fa fa-phone"></i> Support</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 

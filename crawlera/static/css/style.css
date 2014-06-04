@@ -2,3 +2,26 @@
 We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
 However, this blank file is available if you prefer
 */
+.btnRedirect > input[type=submit]{
+    background:url(/static/img/icon-arrow-right.png) no-repeat 154px 22px #800;
+    border:none;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position:relative;
+    height:60px;
+    width:180px;
+    font-size:19px;
+    margin:0px;
+    font-weight:700;
+    color:#ffffff;
+}
