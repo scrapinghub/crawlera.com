@@ -12,8 +12,10 @@
     <li><a href="#ips">How many nodes (or IPs) does Crawlera have?</a></li>
     <li><a href="#https">Is HTTPS supported?</a></li>
     <li><a href="#browser">Why is Crawlera slow from a browser?</a></li>
-    <li><a href="#user-agent">Can I use my own user agent?</a></li>
-    <li><a href="#language">What language is Crawlera written on?</a></li>
+    <li><a href="#user-agent">Can I use my own User Agent?</a></li>
+    <li><a href="#crawl-speed-limit">How does the crawling speed limit work?</a></li>
+    <li><a href="#detect-redirects">Can Crawlera detect/prevent redirects to captcha pages, and do we have to pay for those?</a></li>
+    <li><a href="#language">What language is Crawlera written in?</a></li>
     <li><a href="#open-source">Do you plan to release Crawlera as open source?</a></li>
     <li><a href="#other">I have another question, where should I ask?</a></li>
 </ul>
@@ -31,15 +33,15 @@
 
 <h4 id="https" class="subheader">Is HTTPS supported?</h4>
 
-<p>Yes, but there's a small caveat: The Crawlera Proxy API doesn't support the CONNECT method, so HTTPS urls won't work with the standard proxy configuration (that most HTTP clients and agent support).</p>
+<p>Yes, but there's a small caveat: Crawlera Proxy API doesn't support the CONNECT method, so HTTPS URLs won't work with the standard proxy configuration (that most HTTP clients and agents support).</p>
 
-<p>To fetch HTTPS urls you can either use the <a href="https://www.mashape.com/scrapinghub/crawlera#!endpoint-fetch">fetch API</a>, or configure your HTTP client to use a HTTP proxy even for HTTPS urls. However, not many clients support this for privacy reasons that don't apply to web crawling. cURL doesn't support it, but lwp-request does. Here are some examples:</p>
+<p>To fetch HTTPS URLs you can either use the <a href="https://www.mashape.com/scrapinghub/crawlera#!endpoint-fetch">fetch API</a>, or configure your HTTP client to use a HTTP proxy even for HTTPS URLs. However, not many clients support this for privacy reasons that don't apply to web crawling. cURL doesn't support it, but <i>lwp-request</i> does. Here are some examples:</p>
 
 <p>Using the <a href="https://www.mashape.com/scrapinghub/crawlera#!endpoint-fetch">fetch API</a>:</p>
 
 <pre>curl -u USER:PASS http://api.crawlera.com/fetch?url=https://twitter.com</pre>
 
-<p>Using the HTTP proxy API with lwp-request:</p>
+<p>Using the HTTP proxy API with <i>lwp-request</i>:</p>
 
 <pre>lwp-request -p http://USER:PASS@proxy.crawlera.com:8010 https://twitter.com/</pre>
 
@@ -52,10 +54,18 @@
 <h4 id="user-agent" class="subheader">Can I use my own User Agent?</h4>
 
 <p>You may have noticed that Crawlera ignores the User-Agent you pass in the requests and injects its own. This is intentional and it's part of the internal crawling algorithm that Crawlera employs to keep crawlers from getting banned. User agents are in fact kept the same during the same "crawl session" (and do not blindly rotate in random fashion) to emulate better the behaviour of a browser.</p>
-<p>The other reason for overriding the user-agent is that we want websites to be able to contact us if our crawls are causing them any trouble. Crawlera is designed to be polite and this should never happen, although there is always a chance. Having been in the crawling business for a while, we know how important is to identify your crawler properly and provide a way for website owners to contact us. It's important to highlight that we will <b>never disclose any customer information</b>, but we may have to occasionally stop a crawl if there is a complain.</p>
+<p>The other reason for overriding the User-Agent is that we want websites to be able to contact us if our crawls are causing them any trouble. Crawlera is designed to be polite and this should never happen, although there is always a chance. Having been in the crawling business for a while, we know how important it is to identify your crawler properly and provide a way for website owners to contact us. It's important to highlight that we will <b>never disclose any customer information</b>, but we may have to occasionally stop a crawl if there is a complaint.</p>
 
-<h4 id="language" class="subheader">What language is Crawlera written on?</h4>
-<p>Erlang.
+<h4 id="crawl-speed-limit" class="subheader">How does the crawling speed limit work?</h4>
+
+<p>Crawlera adds request delays, 200 ms by default. It's a default delay between two consecutive requests to the same website. It can be overridden but it serves a basic purpose not to overload slow websites.</p>
+
+<h4 id="detect-redirects" class="subheader">Can Crawlera detect/prevent redirects to captcha pages, and do we have to pay for those?</h4>
+
+<p>Crawlera charges only for successful requests. There is a list of rules which Crawlera uses to detect redirects, but we need to obtain a sample of a captcha/redirect page to set them up.</p>
+
+<h4 id="language" class="subheader">What language is Crawlera written in?</h4>
+<p>Erlang.</p>
 
 <h4 id="open-source" class="subheader">Do you plan to release Crawlera as open source?</h4>
 <p>Not for the moment.</p>
