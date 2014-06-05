@@ -4,20 +4,27 @@ However, this blank file is available if you prefer
 */
 
 .logo {
+    content:url("/static/img/crawlera.png");
+    width:80px; /*width of your image*/
+    height:66px; /*height of your image*/
+    padding-top: 4px;
+    padding-left: 60px;
+}
+
+.crawlera {
     font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
     font-weight: normal;
-    background-image: url("/static/img/crawlera.png");
-    background-repeat: no-repeat;
     padding-top: 4px;
     padding-left: 60px;
     color: #008;
 }
 
-.logo a {
+.logo, .crawlera a {
     color: #008;
 }
 
-.logo a:hover {
+.logo, .crawlera a:hover {
    text-decoration: none;
    color: #008;
 }
