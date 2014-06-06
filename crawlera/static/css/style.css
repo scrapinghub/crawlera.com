@@ -5,14 +5,14 @@ However, this blank file is available if you prefer
 
 .logo {
     content:url("/static/img/crawlera.png");
-    width:100px; /*width of your image*/
-    height:70px; /*height of your image*/
+    width:150px; /*width of your image*/
+    height:105px; /*height of your image*/
     display: block;
 }
 
 .crawlera {
     font-family: 'Orbitron', sans-serif;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: normal;
     padding-top: 4px;
     color: #008;
