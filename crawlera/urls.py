@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
+from django.views.generic.base import RedirectView
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -20,13 +21,13 @@ def site(name, pattern=None, template=None, **kwargs):
 
 urlpatterns = patterns('django.views.generic.simple',
     site('home', pattern = ''),
-    site('features'),
-    site('pricing'),
-    site('api'),
-    site('faq'),
-    site('usage'),
-    site('signup'),
-    site('calculate')
+    url(r'^features/$'  , RedirectView.as_view(url='http://scrapinghub.com/crawlera#features', permanent=False)),
+    url(r'^usage/$'     , RedirectView.as_view(url='http://scrapinghub.com/crawlera#example', permanent=False)),
+    url(r'^pricing/$'   , RedirectView.as_view(url='http://scrapinghub.com/pricing', permanent=False), name='pricing'),
+    url(r'^signup/$'    , RedirectView.as_view(url='http://scrapinghub.com/pricing', permanent=False)),
+    url(r'^faq/$'       , RedirectView.as_view(url='http://scrapinghub.com/faq#crawlera', permanent=False)),
+    url(r'^support/$'   , RedirectView.as_view(url='http://support.scrapinghub.com/list/19086-general/?category=4879', permanent=False)),
+
     # Examples:
     # url(r'^$', 'crawlera.views.home', name='home'),
     # url(r'^crawlera/', include('crawlera.foo.urls')),
