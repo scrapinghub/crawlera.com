@@ -21,12 +21,12 @@ def site(name, pattern=None, template=None, **kwargs):
 
 urlpatterns = patterns('django.views.generic.simple',
     site('home', pattern = ''),
-    url(r'^features/$'  , RedirectView.as_view(url='http://scrapinghub.com/crawlera#features', permanent=False)),
-    url(r'^usage/$'     , RedirectView.as_view(url='http://scrapinghub.com/crawlera#example', permanent=False)),
-    url(r'^pricing/$'   , RedirectView.as_view(url='http://scrapinghub.com/pricing#crawlera-pricing', permanent=False), name='pricing'),
-    url(r'^signup/$'    , RedirectView.as_view(url='http://scrapinghub.com/pricing#crawlera-pricing', permanent=False)),
-    url(r'^faq/$'       , RedirectView.as_view(url='http://scrapinghub.com/faq#crawlera', permanent=False)),
-    url(r'^support/$'   , RedirectView.as_view(url='http://support.scrapinghub.com/list/19086-general/?category=4879', permanent=False)),
+    url(r'^features/$'  , RedirectView.as_view(url='http://scrapinghub.com/crawlera#features')),
+    url(r'^usage/$'     , RedirectView.as_view(url='http://scrapinghub.com/crawlera#example')),
+    url(r'^pricing/$'   , RedirectView.as_view(url='http://scrapinghub.com/pricing#crawlera-pricing'), name='pricing'),
+    url(r'^signup/$'    , RedirectView.as_view(url='http://scrapinghub.com/pricing#crawlera-pricing')),
+    url(r'^faq/$'       , RedirectView.as_view(url='http://scrapinghub.com/faq#crawlera')),
+    url(r'^support/$'   , RedirectView.as_view(url='http://support.scrapinghub.com/list/19086-general/?category=4879')),
 
     # Examples:
     # url(r'^$', 'crawlera.views.home', name='home'),
