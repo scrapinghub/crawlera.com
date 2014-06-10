@@ -20,25 +20,32 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="span10">
-            <div class="" align="center" style="margin-left: -10px;"><h2 class="logo"></h2></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span10">
-            <div class="masthead" align="center">
-                <h2 class="crawlera" style="margin-top: -10px;"><a href="{% url home%}">Crawlera</a>
-                    <br>
-                    <div style="font-size: 14px; margin-left: 124px; margin-top: -15px; color: #800;">by Scrapinghub</div>
-                </h2>
+<div class="wrap-body">
+        <div class="container">
+            <div class="header-bg"></div>
+            <div class="body clearfix">
+                <div class="row">
+                    <div class="span12">
+                        <div class="" align="center" style="margin-left: -10px;"><h2 class="logo"></h2></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        <div class="masthead" align="center">
+                            <h2 class="crawlera" style="margin-top: -10px;"><a href="{% url home%}">Crawlera</a>
+                            </h2>
+                            <br />
+                            <p class="center">
+                                Crawlera is a service of the <a href="http://scrapinghub.com/platform">Scrapinghub Platform</a>.
+                            </p>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </div>
-
-<div class="container">
+<div class="container" id="contenido">
  {% block page-content %}
  {% endblock %}
 </div>
