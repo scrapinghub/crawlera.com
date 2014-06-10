@@ -64,7 +64,7 @@ padding-top: 10px;
     padding: 20px 8%;
 }
 
-.btnRedirect > input[type=submit]{
+.redirect-button > input[type=submit]{
     background:url(/static/img/icon-arrow-right.png) no-repeat 154px 22px #c9001a;
     border:none;
     -webkit-border-top-left-radius: 5px;
