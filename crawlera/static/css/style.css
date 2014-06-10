@@ -12,6 +12,7 @@ a, a:visited, a:hover {
     background-position: center bottom;
     background-repeat: no-repeat;
     min-height: 85px;
+    margin-top: -2px;
 }
 
 .logo {
@@ -40,7 +41,6 @@ a, a:visited, a:hover {
 }
       body {
         font-family: 'Open Sans';
-        padding-bottom: 60px;
       }
 
       /* Custom container */
