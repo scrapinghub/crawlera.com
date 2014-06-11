@@ -1,0 +1,103 @@
+/*
+We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+However, this blank file is available if you prefer
+*/
+
+a, a:visited, a:hover {
+    color: #e13c4f;
+}
+
+.header-bg {
+    background-image: url("/images/headerbg.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 85px;
+    margin-top: -2px;
+}
+
+.logo {
+    content:url("/images/crawlera.png");
+    width:150px; /*width of your image*/
+    height:105px; /*height of your image*/
+    display: block;
+    margin-top: 50px;
+}
+
+.crawlera {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    padding-top: 4px;
+    color: #008;
+}
+
+.logo, .crawlera a {
+    color: #008;
+}
+
+.logo, .crawlera a:hover {
+   text-decoration: none;
+   color: #008;
+}
+      body {
+        font-family: 'Open Sans';
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1170px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+pre {
+   color: #e13c4f;
+}
+
+h4 {
+padding-top: 10px;
+}
+
+.white-area {
+    padding: 20px 8%;
+}
+
+.redirect-button > input[type=submit]{
+    background:url(/images/icon-arrow-right.png) no-repeat 154px 22px #c9001a;
+    border:none;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position:relative;
+    height:60px;
+    width:180px;
+    font-size:19px;
+    margin:0px;
+    font-weight:700;
+    color:#ffffff;
+}
+
+.button-divider {
+    margin-left:50px;
+    height:auto;
+    display:inline-block;
+}
+
+body{
+    background: #282828;
+}
+
+.body {
+    background: #ffffff;
+}
