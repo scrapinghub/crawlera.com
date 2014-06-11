@@ -1,3 +1,6 @@
+---
+---
+
 /*
 We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
 However, this blank file is available if you prefer
@@ -8,7 +11,7 @@ a, a:visited, a:hover {
 }
 
 .header-bg {
-    background-image: url("/images/headerbg.png");
+    background-image: url("{{ site.baseurl }}/images/headerbg.png");
     background-position: center bottom;
     background-repeat: no-repeat;
     min-height: 85px;
@@ -16,7 +19,7 @@ a, a:visited, a:hover {
 }
 
 .logo {
-    content:url("/images/crawlera.png");
+    content:url("{{ site.baseurl }}/images/crawlera.png");
     width:150px; /*width of your image*/
     height:105px; /*height of your image*/
     display: block;
@@ -65,7 +68,7 @@ padding-top: 10px;
 }
 
 .redirect-button > input[type=submit]{
-    background:url(/images/icon-arrow-right.png) no-repeat 154px 22px #c9001a;
+    background:url({{ site.baseurl }}/images/icon-arrow-right.png) no-repeat 154px 22px #c9001a;
     border:none;
     -webkit-border-top-left-radius: 5px;
     -webkit-border-bottom-left-radius: 5px;
