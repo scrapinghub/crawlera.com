@@ -1,3 +1,4 @@
 # Site settings
 name: Crawlera
-baseurl: /crawlera.com
+# An empty baseurl is different than the default "/"
+baseurl: 
