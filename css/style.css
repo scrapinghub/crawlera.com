@@ -10,11 +10,21 @@ a, a:visited, a:hover {
     color: #e13c4f;
 }
 
+.header {
+    background-color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.header img {
+    width: 175px;
+}
+
 .header-bg {
     background-image: url("{{ site.baseurl }}/images/headerbg.png");
     background-position: center bottom;
     background-repeat: no-repeat;
-    min-height: 85px;
+    min-height: 5px;
     margin-top: -2px;
 }
 
@@ -104,3 +114,313 @@ body{
 .body {
     background: #ffffff;
 }
+
+.video-row {
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.crawlera-video {
+    box-shadow: 0px 0px 4px #999999;
+}
+
+h3 {
+    border-bottom: 1px solid black;
+    margin-top: 25px;
+}
+
+/* Pricing */
+
+.plans-wrapper {
+    margin: 0 auto;
+    width: 960px;
+    text-align: center;
+}
+
+.pricing-page h2 {
+    padding-left: 15px;
+}
+
+h2 .tooltip.top {
+    margin-top: -10px;
+}
+
+h2 .anchor-hover {
+    visibility: hidden;
+    text-decoration: none;
+}
+
+h2:hover .anchor-hover,
+h2:focus .anchor-hover {
+    visibility: visible;
+}
+
+h2:hover .anchor-hover:hover,
+h2:focus .anchor-hover:hover {
+    color: #cc0b0f;
+    cursor: pointer;
+}
+
+.sc-plans {
+    float: left;
+    background-color: #f2f2f2;
+    width: 115px;
+    box-shadow: 0px 0px 4px #a9a9a9;
+}
+
+.soon {
+    font-size: 10px;
+}
+
+.plan-title {
+    background-color: #c0392b;
+    padding: 20px 0px;
+    color: white;
+    font-size: 18px;
+    line-height:16px;
+    font-weight: bold;
+}
+
+.spec-list {
+    width: 250px;
+    text-align: right;
+    color: #666666;
+    box-shadow: none;
+    border-color: white;
+}
+
+.spec-list .plan-title {
+    background-color: white;
+    color: #666666;
+    padding-right: 10px;
+}
+
+.free-plan {
+    background-color: #e6fddb;
+    color: #427226;
+}
+
+.free-plan .plan-title {
+    background-color: #427226;
+}
+
+.shared-plan {
+    background-color: #fff0cf;
+    color: #a43f11;
+}
+
+.shared-plan .plan-title {
+    background-color: #de8300;
+}
+
+.dedicated-plan {
+    background-color: #ffe2e3;
+    color: #a02226;
+}
+
+.dedicated-plan .plan-title {
+    background-color: #c0392b;
+    padding: 10px 0px;
+    padding-bottom: 11px;
+}
+
+.enterprise-plan {
+    background-color: #e9f4ff;
+    color: #105b89;
+}
+
+.enterprise-plan .plan-title {
+    background-color: #105b89;
+}
+
+.plan-details {
+    height: 370px;
+}
+
+.sc-plans ul {
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+.sc-plans ul > li {
+    list-style-type: none;
+    padding: 10px 10px;
+    border-top: 1px solid white;
+    vertical-align: middle;
+}
+
+.sc-plans ul > li.custom-field {
+    padding-top: 130px;
+}
+
+.sc-plans ul >li:last-child {
+    border-bottom: none;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.sc-plans .popover {
+    width: 185px;
+    text-align: center;
+    color: #666666;
+}
+
+.sc-plans .popover-content {
+    padding: 5px;
+}
+
+
+.crawlera-plans {
+    width: 785px;
+}
+
+.crawlera-plans .sc-plans.spec-list {
+    width: 180px;
+}
+
+.crawlera-plans .plan-details {
+    height: auto;
+}
+
+.crawlera-plans .sc-plans {
+    width: 120px;
+}
+
+.crawlera-plans .dedicated-plan .plan-title {
+    padding: 20px 0px;
+}
+
+.crawlera-plans .content {
+    padding-bottom: 0px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) and (min-width: 979px) {
+    .plans-wrapper {
+        width: 800px;
+    }
+
+    .sc-plans {
+        width: 95px;
+        font-size: 12px;
+    }
+
+    .spec-list {
+        width: 190px;
+    }
+
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+    .plans-wrapper {
+        width: 650px;
+    }
+
+
+    .sc-plans {
+        width: 80px;
+        font-size: 11px;
+    }
+
+    .spec-list {
+        width: 150px;
+    }
+
+    .crawlera-plans .sc-plans.spec-list {
+        width: 150px;
+    }
+
+    .crawlera-plans .sc-plans {
+        width: 100px;
+    }
+
+    .sc-plans ul > li {
+        min-height: 35px;
+    }
+
+    .plan-title {
+        font-size: 13px;
+    }
+
+    .plan-details {
+        height: 510px;
+    }
+
+    .dedicated-plan .plan-title {
+        padding: 11px 0px;
+        padding-bottom: 12px;
+    }
+
+    .shared-plan .plan-title {
+        padding: 20px;
+    }
+
+    .crawlera-plans .shared-plan .plan-title {
+        padding: 20px;
+    }
+
+    .crawlera-plans .plan-details ul > li {
+        min-height: 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .plans-wrapper {
+        width: 90%;
+    }
+
+    .sc-plans,
+    .crawlera-plans .sc-plans {
+        float: none;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .mobile-only {
+        display: inline;
+    }
+
+
+    .spec-list {
+        display: none;
+    }
+
+    .plan-details {
+        height: auto;
+    }
+
+    .sc-plans ul > li.custom-field {
+        padding-top: 10px;
+    }
+
+    .sc-plans ul > li > a.button {
+        width: 60%;
+        text-decoration: none;
+        margin: 15px auto;
+        display: inline-block;
+    }
+
+    .plans-wrapper .button-medium {
+        width: 240px;
+    }
+
+    .crawlera-video {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 440px) {
+
+    a.redirect-button > input[type=submit] {
+        clear: both;
+        margin: 15px;
+    }
+
+    .button-divider {
+        margin: 0px;
+    }

@@ -3,6 +3,12 @@ layout: default
 ---
 
 <div class="body clearfix">
+  <div class="white-area video-row">
+    <iframe class="crawlera-video" src="https://player.vimeo.com/video/135827204" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <h4>Meet Crawlera, a service of the <a href="http://scrapinghub.com/platform">Scrapinghub Platform</a>!</h4>
+  </div>
+  <div class="header-bg"></div>
+
   <div class="white-area">
 
     <h3>What is Crawlera?</h3>
@@ -41,18 +47,135 @@ layout: default
 
     <p>Only successful downloads are charged.</p>
 
-    <p>
-    See <a href="http://scrapinghub.com/pricing#crawlera">Pricing</a> for more details.
-    </p>
+    <h3>Pricing</h3>
+
+    <div class="plans-wrapper crawlera-plans">
+
+        <div class="sc-plans spec-list">
+            <div class="plan-title">&nbsp;</div>
+            <div class="plan-details">
+                <ul>
+                    <li>Price</li>
+                    <li>Monthly requests <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Only successful requests count towards the quota"><i class="fa fa-question-circle"></i></span></li>
+                    <li>Concurrent requests</li>
+                    <li>Domains</li>
+                    <li>Custom User agent</li>
+                    <li>HTTPS</li>
+                    <li>Use your own IPs</li>
+                    <li>Crawl tuning <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Custom configuration to crawl domains faster"><i class="fa fa-question-circle"></i></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sc-plans free-plan">
+            <div class="plan-title">C10</div>
+            <div class="plan-details">
+                <ul>
+                    <li><span class="mobile-only">Price: </span>$25/mo</li>
+                    <li><span class="mobile-only"> Monthly requests <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Only successful requests count towards the quota"><i class="fa fa-question-circle"></i></span>: </span> <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Limited to 5K/day">150K <i class="fa fa-question-circle"></i></span></li>
+                    <li><span class="mobile-only">Concurrent requests: </span>10</li>
+                    <li><span class="mobile-only">Domains: </span>1</li>
+                    <li><span class="mobile-only">Custom User agent: </span>-</li>
+                    <li><span class="mobile-only">HTTPS: </span>✔</li>
+                    <li><span class="mobile-only">Use your own IPs: </span>-</li>
+                    <li><span class="mobile-only">Crawl tuning <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Custom configuration to crawl domains faster"><i class="fa fa-question-circle"></i></span>: </span>-</li>
+                    <li class="mobile-only"><a href="https://dash.scrapinghub.com/account/signup/?utm_source=site&utm_medium=pricing_page&utm_campaign=crawlera" class="button button-red">Sign Up Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sc-plans shared-plan">
+            <div class="plan-title">C50</div>
+            <div class="plan-details">
+                <ul>
+                    <li><span class="mobile-only">Price: </span>$100/mo</li>
+                    <li><span class="mobile-only"> Monthly requests <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Only successful requests count towards the quota"><i class="fa fa-question-circle"></i></span>: </span> <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Limited to 35K/day">1M <i class="fa fa-question-circle"></i></span></li>
+                    <li><span class="mobile-only">Concurrent requests: </span>50</li>
+                    <li><span class="mobile-only">Domains: </span>5</li>
+                    <li><span class="mobile-only">Custom User agent: </span>✔</li>
+                    <li><span class="mobile-only">HTTPS: </span>✔</li>
+                    <li><span class="mobile-only">Use your own IPs: </span>-</li>
+                    <li><span class="mobile-only">Crawl tuning <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Custom configuration to crawl domains faster"><i class="fa fa-question-circle"></i></span>: </span>-</li>
+                    <li class="mobile-only"><a href="https://dash.scrapinghub.com/account/signup/?utm_source=site&utm_medium=pricing_page&utm_campaign=crawlera" class="button button-red">Sign Up Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sc-plans dedicated-plan">
+            <div class="plan-title">C100</div>
+            <div class="plan-details">
+                <ul>
+                    <li><span class="mobile-only">Price: </span>$250/mo</li>
+                    <li><span class="mobile-only"> Monthly requests <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Only successful requests count towards the quota"><i class="fa fa-question-circle"></i></span>: </span> <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Limited to 100K/day">3M <i class="fa fa-question-circle"></i></span></li>
+                    <li><span class="mobile-only">Concurrent requests: </span>100</li>
+                    <li><span class="mobile-only">Domains: </span>10</li>
+                    <li><span class="mobile-only">Custom User agent: </span>✔</li>
+                    <li><span class="mobile-only">HTTPS: </span>✔</li>
+                    <li><span class="mobile-only">Use your own IPs: </span>-</li>
+                    <li><span class="mobile-only">Crawl tuning <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Custom configuration to crawl domains faster"><i class="fa fa-question-circle"></i></span>: </span>✔</li>
+                    <li class="mobile-only"><a href="https://dash.scrapinghub.com/account/signup/?utm_source=site&utm_medium=pricing_page&utm_campaign=crawlera" class="button button-red">Sign Up Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sc-plans dedicated-plan">
+            <div class="plan-title">C200</div>
+            <div class="plan-details">
+                <ul>
+                    <li><span class="mobile-only">Price: </span>$500/mo</li>
+                    <li><span class="mobile-only"> Monthly requests <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Only successful requests count towards the quota"><i class="fa fa-question-circle"></i></span>: </span> <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Limited to 300K/day">9M <i class="fa fa-question-circle"></i></span></li>
+                    <li><span class="mobile-only">Concurrent requests: </span>200</li>
+                    <li><span class="mobile-only">Domains: </span>20</li>
+                    <li><span class="mobile-only">Custom User agent: </span>✔</li>
+                    <li><span class="mobile-only">HTTPS: </span>✔</li>
+                    <li><span class="mobile-only">Use your own IPs: </span>-</li>
+                    <li><span class="mobile-only">Crawl tuning <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Custom configuration to crawl domains faster"><i class="fa fa-question-circle"></i></span>: </span>✔</li>
+                    <li class="mobile-only"><a href="https://dash.scrapinghub.com/account/signup/?utm_source=site&utm_medium=pricing_page&utm_campaign=crawlera" class="button button-red">Sign Up Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sc-plans enterprise-plan">
+            <div class="plan-title">Enterprise</div>
+            <div class="plan-details">
+                <ul>
+                    <li><span class="mobile-only">Contact Sales for</span> Custom <span class="mobile-only">Settings</span></li>
+                    <li><span class="mobile-only">Contact Sales for</span> Custom <span class="mobile-only">Settings</span></li>
+                    <li><span class="mobile-only">Contact Sales for</span> Custom <span class="mobile-only">Settings</span></li>
+                    <li><span class="mobile-only">Contact Sales for</span> Custom <span class="mobile-only">Settings</span></li>
+                    <li><span class="mobile-only">Custom User agent: </span>✔</li>
+                    <li><span class="mobile-only">HTTPS: </span>✔</li>
+                    <li><span class="mobile-only">Use your own IPs: </span>✔</li>
+                    <li><span class="mobile-only">Crawl tuning <span data-toggle="popover" data-trigger="hover" data-placement="top"  data-content="Custom configuration to crawl domains faster"><i class="fa fa-question-circle"></i></span>: </span>✔</li>
+                    <li class="mobile-only"><a href="https://dash.scrapinghub.com/account/signup/?utm_source=site&utm_medium=pricing_page&utm_campaign=crawlera" class="button button-red">Sign Up Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
 
     <br /><br />
     <div style="text-align: center">
       <a class="redirect-button" href="http://scrapinghub.com/crawlera"><input type="submit" value="Learn More  "></a>
       <div class="button-divider"/>
-        <a class="redirect-button" href="http://scrapinghub.com/pricing/#crawlera"><input type="submit" value="Sign Up "></a>
+        <a class="redirect-button" href="https://dash.scrapinghub.com/account/signup/?utm_source=site&utm_medium=pricing_page&utm_campaign=crawlera"><input type="submit" value="Sign Up "></a>
       </div>
       <br />
       <br />
       <br />
     </div>
   </div>
+
+<script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+    </script>
+
+    <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+</script>
