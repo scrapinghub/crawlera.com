@@ -6,6 +6,10 @@ rvm:
 script:
   - bundle exec jekyll build
 
+env:
+  global:
+    secure: Kf9QU8q4jKNhGqm5aDHnqACJ8sZ+NK7sz6VYyMS5EZ2gJz/zXmm6JtN7l2zskNal448mNwHAQSURl2TpDHJNLDk+qUwLvwEZP6CVkPy0SaPoUM1FR1VchocEVHM3sBMeGB/5HOXmqh1f1EBSe8hctrgqaCXX715VEAMbYiDoFH/A3ibf89udpnpNH1qXleXNyBXjr56An80Csr9gIPIE2UYb08skNvRZGzxQuCH1VHWLE6+VB31WVos/VOucrlYHEyW6cfEq41BX5akYb+9nr0neCOmX1Nw+YPx2aoyhuTLC1dABs5xe9wjBF16b4ruVQqIWoUE7qHo5Ao0eeuqS3XTz64gKgZB5w7Yt4NuMI8d+ACzdLjbjnq1+qJRGJvyNjClgsy4oBweGfyVXfaQzbx2v0t7Tngrdi5TgOhZr3F46tNyWvh2fRqcMZU+JTtTYmF8de9Rsc0dAx4py/RWY+tWA7beubdC937ZAg0au2dYtDiaFIRnLCknnoxM9sQRK96rnE7mH10yakHiLtB8dqtC+0Vg+MM8p7Qrcp6brWOwtwDKF6wm2y3NLisi/XArsBW8vHkAk0vjczX2hnQZeos0iHOu2Mo4yqbEkkS3XILAhdJy2+H7mIjEj2EZZ4xp2K8xPdTxkrXSzUHYoSIoYpDDLpV/V8S9V44f1xPzJS3w=
+
 deploy:
   provider: s3
   access_key_id:
@@ -18,3 +22,6 @@ deploy:
   acl: public_read
   on:
     branch: master
+
+after_deploy:
+  - aws cloudfront create-invalidation --distribution-id $DISTID --paths '/*'
