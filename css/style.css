@@ -424,3 +424,162 @@ h2:focus .anchor-hover:hover {
     .button-divider {
         margin: 0px;
     }
+}
+
+/* Testimonials */
+
+#testimonials {
+    margin: 50px 75px;
+}
+
+#testimonials a, #testimonials a:hover {
+    color: #333333;
+    text-decoration: none;
+}
+
+.testimonial {
+    margin-top: 80px;
+}
+
+.testimonial:first-child {
+    margin-top: 20px;
+}
+
+.testimonial:after {
+    content: " ";
+    clear: both;
+    display: block;
+}
+
+#testimonials ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 5px;
+}
+
+#testimonials .customer-info {
+    float: left;
+    width: 120px;
+    text-align: left;
+    font-size: 12px;
+    margin-right: 65px;
+}
+
+#testimonials ul li {
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.3em;
+}
+
+#testimonials .customer-name {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+#testimonials .picture img {
+    width: 105px;
+    height: 105px;
+    border-radius: 55px;
+    border: 3px solid #f2f2f2;
+    margin: 0 auto;
+    margin-top: -30px;
+}
+
+#testimonials .description {
+    text-align: left;
+    float: right;
+    width: 75%;
+}
+
+#testimonials .short-highlight {
+    font-size: 26px;
+    color: #cc0b0f;
+    font-weight: bold;
+}
+
+#testimonials .detailed-text {
+    font-size: 13px;
+}
+
+#testimonials .quote-marks {
+    width: 25px;
+    height: 25px;
+}
+
+#testimonials .quote-marks:first-child {
+    margin-top: -25px;
+    margin-left: -35px;
+}
+
+#testimonials .quote-marks:last-child {
+    margin-left: 10px;
+    margin-bottom: -20px;
+}
+
+@media (max-width: 1200px) {
+    #testimonials .customer-info {
+        float: none;
+        display: block;
+        text-align: left;
+        margin: 0px;
+        width: auto;
+    }
+
+    #testimonials .customer-signature {
+        padding: 0px;
+        font-style: italic;
+        font-size: 13px;
+    }
+
+    #testimonials .customer-name {
+        font-size: inherit;
+    }
+
+    #testimonials .picture img {
+        float: left;
+        margin-right: 20px;
+    }
+
+    .testimonial {
+        margin-top: 50px;
+    }
+
+    #testimonials .description {
+        float: none;
+        width: 100%;
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+    }
+
+    #testimonials .short-highlight {
+        font-size: 18px;
+    }
+
+    #testimonials .detailed-text {
+        font-size: 15px;
+    }
+
+    #testimonials .quote-marks:first-child,
+    #testimonials .quote-marks:last-child {
+        width: 15px;
+        height: 15px;
+    }
+
+    #testimonials .quote-marks:first-child {
+        margin-top: -15px;
+        margin-left: -20px;
+    }
+
+    #testimonials .quote-marks:last-child {
+        margin-bottom: -15px;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    #testimonials {
+        padding: 0px 25px;
+    }
+}
